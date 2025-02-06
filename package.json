@@ -1,7 +1,7 @@
 {
   "name": "mindful-meal-planner",
   "version": "2.0.0",
-  "description": "Boilerplate for WDD 330 Mindful Meal Planner project",
+  "description": "WDD 330 Mindful Meal Planner project",
   "main": "main.js",
   "type": "module",
   "scripts": {

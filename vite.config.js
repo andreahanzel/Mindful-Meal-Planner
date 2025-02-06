@@ -2,24 +2,19 @@ import { resolve } from "path";
 import { defineConfig } from "vite";
 
 export default defineConfig({
-  root: "src/", 
-  base: "/", 
+  root: "src/", // Set the root directory
+  base: "/", // Base path
   build: {
-    outDir: "../dist", 
-    emptyOutDir: true, 
+    outDir: "../dist", // Output folder (moves outside /src)
+    emptyOutDir: true, // Clean build before new output
     rollupOptions: {
       input: {
-        main: resolve(__dirname, "src/index.html"),
-        recipeSearch: resolve(__dirname, "src/app-pages/recipe-search.html"),
-        recipeDetails: resolve(__dirname, "src/app-pages/recipe-details.html"),
-        mealPlanner: resolve(__dirname, "src/app-pages/meal-planner.html"),
-        shoppingList: resolve(__dirname, "src/app-pages/shopping-list.html"),
-        settings: resolve(__dirname, "src/app-pages/settings.html"),
+        main: resolve(__dirname, "src/index.html"), // Main entry point
       },
     },
   },
-
   server: {
-    historyApiFallback: true, 
+    port: 5173, // Use default Vite port
+    open: true, // Automatically open browser on `npm run dev`
   },
 });
