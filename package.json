@@ -1,0 +1,36 @@
+{
+  "name": "mindful-meal-planner",
+  "version": "2.0.0",
+  "description": "Boilerplate for WDD 330 Mindful Meal Planner project",
+  "main": "main.js",
+  "type": "module",
+  "scripts": {
+    "start": "vite",
+    "dev": "vite",
+    "build": "vite build --emptyOutDir",
+    "preview": "vite preview",
+    "lint": "eslint *.js src/**/*.js",
+    "format": "prettier --ignore-path ./.gitignore --write \"./**/*.{html,json,js,ts,css}\"",
+    "test": "jest"
+  },
+  "author": "Andrea Toreki",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^9.18.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "jest": "^29.2.2",
+    "prettier": "^3.4.2",
+    "@babel/preset-env": "^7.20.2"
+  },
+  "browserslist": [
+    "last 3 and_chr versions",
+    "last 3 chrome versions",
+    "last 3 opera versions",
+    "last 3 ios_saf versions",
+    "last 3 safari versions"
+  ],
+  "dependencies": {
+    "vite": "^6.0.7"
+  }
+}

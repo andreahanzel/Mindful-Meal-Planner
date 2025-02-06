@@ -1,0 +1,71 @@
+<!-- src/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mindful Meal Planner</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="icon" type="image/png" href="./public/images/favicon.png">
+</head>
+<body>
+    <header id="header"></header>
+    
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Plan Your Meals with Ease</h1>
+                <p>Discover healthy recipes, organize your meals, and simplify grocery shopping.</p>
+                <button class="btn-primary">Get Started</button>
+                <button class="btn-secondary">Learn More</button>
+            </div>
+            <img src="./public/images/hero-image.jpg" alt="Healthy meal display">
+        </section>
+        
+        <section class="features">
+            <h2>App Features</h2>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <img src="./public/icons/recipes.svg" alt="Recipes Icon">
+                    <h3>Healthy Recipes</h3>
+                    <p>Find nutritious meal ideas tailored to your dietary needs.</p>
+                </div>
+                <div class="feature-item">
+                    <img src="./public/icons/planner.svg" alt="Planner Icon">
+                    <h3>Meal Planning</h3>
+                    <p>Organize your weekly meals effortlessly.</p>
+                </div>
+                <div class="feature-item">
+                    <img src="./public/icons/grocery.svg" alt="Grocery Icon">
+                    <h3>Smart Grocery Lists</h3>
+                    <p>Generate shopping lists based on your planned meals.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="testimonials">
+            <h2>What Our Users Say</h2>
+            <blockquote>
+                "This app transformed my eating habits. Meal planning has never been easier!"
+                <cite>- Sarah J.</cite>
+            </blockquote>
+        </section>
+        
+        <section class="newsletter">
+            <h2>Subscribe for Updates</h2>
+            <form>
+                <input type="email" placeholder="Enter your email" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </section>
+    </main>
+    
+    <footer id="footer"></footer>
+    
+    <script>
+        // Dynamically load header and footer
+        document.getElementById("header").innerHTML = fetch("./public/partials/header.html").then(res => res.text());
+        document.getElementById("footer").innerHTML = fetch("./public/partials/footer.html").then(res => res.text());
+    </script>
+</body>
+</html>
