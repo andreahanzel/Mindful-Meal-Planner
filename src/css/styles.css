@@ -1,0 +1,585 @@
+/* ==== Global Styles ==== */
+:root {
+  --green-dark: #007A33;
+  --green-medium: #58B947;
+  --green-light: #95D600;
+  --orange-dark: #C74A00;
+  --orange-medium: #EA720D;
+  --orange-light: #FF8C00;
+  --text-dark: #222;
+  --text-light: #fff;
+  --shadow: rgba(0, 0, 0, 0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: #f9f9f9;
+  color: var(--text-dark);
+}
+
+/* ==== Header Styles ==== */
+.site-header {
+  background: #005F2F; /* Darker green for better contrast */
+  padding: 15px 0;
+  box-shadow: 0 4px 10px var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  height: 100px;
+  
+}
+
+/* Link colors */
+
+a {
+  color: #EAEAEA; /* Light gray for contrast */
+}
+
+a:hover {
+  color: #FFA400; /* Bright orange */
+}
+
+
+/* ==== Ensure Icons and Labels Are Visible ==== */
+img, png {
+  filter: contrast(1.2); /* Boosts icon visibility */
+}
+
+
+.header-grid {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h1, h2 {
+  color: #111; /* Use black for maximum readability */
+}
+
+
+h3 {
+  color: white; 
+}
+
+.logo img {
+  height: 50px;
+}
+
+/* Default (Desktop) Navigation */
+.nav-menu {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+.nav-menu ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+
+.nav-menu a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
+  color: #FFA400;
+}
+
+/* ==== MOBILE MENU ==== */
+.menu-toggle {
+  display: none; /* Hidden on desktop */
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+}
+
+
+/* ==== Hero Section ==== */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 40px 20px;
+}
+
+.hero-text {
+  flex: 1;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  color: var(--green-dark);
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin: 15px 0;
+  color: var(--text-dark);
+}
+
+.buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.btn-signup {
+  background: #C74A00; ;
+  color: white;
+  padding: 12px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.btn-signup:hover {
+  color: #FFA400; /* Bright orange */
+  transform: scale(1.05);
+}
+
+
+.btn-primary, .btn-secondary {
+  padding: 12px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.btn-primary {
+  background: #C74A00; /* Deep orange */
+  color: #FFF; /* White text */
+  border: none;
+}
+
+.btn-primary:hover {
+  background: #FFA400; /* Bright orange */
+  transform: scale(1.05);
+}
+
+.btn-secondary {
+  background: #007A33; /* Dark green */
+  color: #FFF; /* White text */
+  border: none;
+}
+
+.btn-secondary:hover {
+  background: #005F2F; /* Even darker green */
+  transform: scale(1.05);
+}
+
+.hero-image img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 10px;
+  animation: slideIn 1s ease-in-out;
+}
+
+/* ==== Features Section ==== */
+.features {
+  text-align: center;
+  padding: 50px 20px;
+  background: #fff;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 1200px;
+  margin: 30px auto;
+}
+
+.feature-item {
+  background: #58B947; /* Medium green */
+  color: #FFF; /* White text for contrast */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px var(--shadow);
+  transition: transform 0.3s ease;
+}
+
+.feature-item p {
+  margin-top: 10px;
+  color: black; /* Light gray for better readability */
+}
+
+.feature-item:hover {
+  transform: translateY(-5px);
+  background: #00913c; /* Darker green */
+}
+
+.feature-item img {
+  width: 60px;
+  margin-bottom: 15px;
+}
+
+.feature-item h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #111; /* Dark text for best contrast */
+}
+
+/* ==== Testimonials Section ==== */
+.testimonials {
+  background: #FFA400; /* Bright orange */
+  color: black; /* White text for contrast */
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.testimonial-content {
+  max-width: 800px;
+  margin: 20px auto;
+  font-style: italic;
+  font-size: 1.2rem;
+}
+
+.testimonials cite {
+  display: block;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* ==== Newsletter ==== */
+.newsletter {
+  background: #007A33; /* Dark green */
+  color: #FFF; /* White text for readability */
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.newsletter input {
+  padding: 10px;
+  width: 250px;
+  border: none;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.newsletter button {
+  padding: 10px 20px;
+  background: var(--orange-dark);
+  color: var(--text-light);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.newsletter button:hover {
+  background: var(--orange-light);
+}
+
+/* ==== Footer ==== */
+.site-footer {
+  background: #005F2F; /* Darker green */
+  color: #EAEAEA; /* Light gray text */
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.footer-grid {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  text-align: left;
+}
+
+.footer-grid a {
+  color: #EAEAEA; /* Light gray for links */
+}
+
+.footer-grid a:hover {
+  color: #FFA400; /* Brighter orange */
+}
+
+.footer-grid .column {
+  flex: 1;
+  min-width: 250px;
+  padding: 15px;
+}
+
+.footer-grid h3 {
+  margin-bottom: 15px;
+}
+
+.footer-bottom {
+  margin-top: 20px;
+  font-size: 0.9rem;
+}
+
+.footer-grid ul {
+  list-style: none; /* Remove default bullets */
+  padding: 0;
+  margin: 0;
+}
+
+.footer-grid ul li {
+  margin: 8px 0; /* Add spacing between links */
+}
+
+.footer-grid ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.footer-grid ul li a:hover {
+  color: #FFA400; /* Highlight on hover */
+}
+
+.footer-grid .column form {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-grid input {
+  padding: 10px;
+  width: 180px;
+  border: 1px solid white;
+  border-radius: 5px;
+  font-size: 1rem;
+  background: transparent;
+  color: white;
+}
+
+.footer-grid input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.footer-grid button {
+  padding: 10px 15px;
+  background: var(--orange-dark);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.footer-grid button:hover {
+  background: var(--orange-light);
+}
+
+/* ==== Animations ==== */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(-20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+      opacity: 0;
+      transform: translateX(20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateX(0);
+  }
+}
+
+/* ==== Mobile Responsive ==== */
+@media (max-width: 768px) {
+  .hero {
+      flex-direction: column;
+      text-align: center;
+      align-items: center;
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: row; /* Align buttons next to each other */
+    justify-content: center;
+    gap: 15px; /* Adds space between buttons */
+    margin-bottom: 20px; /* Creates gap between buttons & image */
+}
+
+.btn-primary, .btn-secondary {
+  width: auto; /* Keeps buttons at default width */
+  padding: 12px 18px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+  
+  .feature-grid {
+      grid-template-columns: 1fr;
+  }
+  
+  .footer-grid {
+    flex-direction: column;
+    text-align: center;
+}
+
+.footer-grid .column {
+  width: 100%;
+  padding: 10px;
+}
+
+.footer-grid .column form {
+  flex-direction: column;
+  gap: 5px;
+}
+
+.footer-grid input {
+  width: 100%;
+}
+
+
+
+ /* Hide the menu by default */
+ .nav-menu {
+  position: fixed;
+  top: 0;
+  right: -100%; /* Start completely off-screen */
+  width: 250px;
+  height: 100vh; /* Full screen height */
+  background: rgba(0, 128, 0, 0.85); /* More opacity */
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px); /* Glass effect */
+  padding-top: 60px;
+  box-shadow: -5px 0 10px rgba(0, 0, 0, 0.2);
+  transition: right 0.4s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1000;
+}
+
+.header-grid {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+
+.logo {
+  display: none; /* Hide logo on mobile */
+}
+
+/* Show menu when it's open */
+.nav-menu.menu-open {
+  right: 0;
+}
+
+ .nav-menu.menu-open ~ .menu-toggle {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+
+/* Style the menu items */
+.nav-menu ul {
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  align-items: stretch; /* Stretch full width */
+  gap: 10px;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+
+
+.nav-menu ul li {
+  margin: 15px 0;
+}
+
+.nav-menu a {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  color: white;
+  font-size: 1.2rem;
+  text-decoration: none;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 0;
+  font-weight: bold;
+  transition: background 0.3s ease-in-out;
+}
+
+.nav-menu a:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+/* Menu Toggle Button */
+.menu-toggle {
+  position: fixed; /* Change to fixed */
+  right: 15px; /* Moves toggle to the left */
+  top: 15px;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  z-index: 1200; /* Ensures it stays above the sign-up button */
+  display: block !important;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+
+}
+
+/* Close Button Inside Sidebar */
+.close-menu {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  margin-bottom: 15px;
+  z-index: 1100; /* Ensure it's above everything */
+
+
+}
+
+}
+
+/* Hide close button in desktop view */
+@media (min-width: 769px) {
+  .close-menu {
+      display: none !important;
+  }
+}
+
