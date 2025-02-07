@@ -42,4 +42,4 @@ export function initializeMenu() {
 }
 
 // Make the function available globally
-window.initializeMenu = initializeMenu;
+// window.initializeMenu = initializeMenu;

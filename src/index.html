@@ -78,17 +78,13 @@
     <footer id="footer"></footer>
 
     <script type="module">
-      import { loadPartials } from './public/js/utils.js';
+      import { loadPartials } from './js/utils.js';
       
-      // Load partials when the page loads
       document.addEventListener('DOMContentLoaded', loadPartials);
   </script>
-    
 
-    <!-- Load menu.js separately after header/footer load -->
-    <script src="/js/menu.js" type="module"></script> 
-
-
+  
+  <script src="./js/menu.js" type="module"></script>
 
 </body>
 </html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Search - Mindful Meal Planner</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <header id="header"></header>
+
+    <main class="recipe-search-container">
+        <!-- Hero Search Section -->
+        <section class="recipe-search-hero">
+            <h1>Recipe Search</h1>
+            <div class="search-box-container">
+                <input 
+                    type="text" 
+                    id="recipe-search" 
+                    placeholder="Search for recipes..."
+                    class="main-search-input"
+                >
+                <button id="search-button" class="btn-primary search-btn">Search</button>
+            </div>
+        </section>
+
+        <!-- Filter Section -->
+        <section class="filter-section">
+            <div class="filter-container">
+                <label for="diet-filter">Diet Preferences:</label>
+                <select id="diet-filter" class="diet-select">
+                    <option value="">All Diets</option>
+                    <option value="vegetarian">Vegetarian</option>
+                    <option value="vegan">Vegan</option>
+                    <option value="gluten-free">Gluten Free</option>
+                    <option value="keto">Keto</option>
+                </select>
+            </div>
+        </section>
+
+        <!-- Results Section -->
+        <section class="results-section">
+            <div class="results-grid" id="recipe-results">
+                <!-- Recipe cards will be populated here -->
+            </div>
+            <div id="loading" class="loading-spinner hidden">
+                <div class="spinner"></div>
+                <p>Finding delicious recipes...</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer id="footer"></footer>
+
+    <script type="module">
+      import { loadPartials } from '/js/utils.js';
+      import { initializeRecipeSearch } from '/js/api.js';
+      
+      document.addEventListener('DOMContentLoaded', () => {
+          loadPartials();
+          initializeRecipeSearch();
+      });
+  </script>
+
+
+</body>
+</html>
