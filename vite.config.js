@@ -15,6 +15,9 @@ export default defineConfig(({ mode }) => {
     rollupOptions: {
       input: {
         main: resolve(__dirname, "src/index.html"),
+        // Add partials to the build
+        header: resolve(__dirname, "src/public/partials/header.html"),
+        footer: resolve(__dirname, "src/public/partials/footer.html"),
       },
     },
   },

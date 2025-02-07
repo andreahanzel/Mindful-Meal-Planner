@@ -1,5 +1,5 @@
 // menu.js
-function initializeMenu() {
+export function initializeMenu() {
   const menuToggle = document.querySelector(".menu-toggle");
   const closeMenu = document.querySelector(".close-menu");
   const navMenu = document.querySelector(".nav-menu");

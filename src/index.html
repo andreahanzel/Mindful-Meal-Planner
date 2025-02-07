@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mindful Meal Planner</title>
     <link rel="stylesheet" href="./css/styles.css">
-    <link rel="icon" type="image/png" href="./public/images/favicon.png">
+    <link rel="icon" type="image/png" href="/images/favicon.png">
 </head>
 <body>
 
@@ -26,7 +26,7 @@
                 </div>
             </div>
             <div class="hero-image">
-                <img src="./public/images/hero-image.jpg" alt="Healthy meal display">
+              <img src="/images/hero-image.jpg" alt="Healthy meal display">
             </div>
         </section>
 
@@ -35,17 +35,17 @@
             <h2>App Features</h2>
             <div class="feature-grid">
                 <div class="feature-item">
-                    <img src="./public/images/recipes.png" alt="Recipes Icon">
+                    <img src="/images/recipes.png" alt="Recipes Icon">
                     <h3>Healthy Recipes</h3>
                     <p>Find nutritious meal ideas tailored to your dietary needs.</p>
                 </div>
                 <div class="feature-item">
-                    <img src="./public/images/planner.png" alt="Planner Icon">
+                    <img src="/images/planner.png" alt="Planner Icon">
                     <h3>Meal Planning</h3>
                     <p>Organize your weekly meals effortlessly.</p>
                 </div>
                 <div class="feature-item">
-                    <img src="./public/images/grocery.png" alt="Grocery Icon">
+                    <img src="/images/grocery.png" alt="Grocery Icon">
                     <h3>Smart Grocery Lists</h3>
                     <p>Generate shopping lists based on your planned meals.</p>
                 </div>
@@ -77,23 +77,16 @@
     <!-- FOOTER -->
     <footer id="footer"></footer>
 
-    <script>
-      // Load header and footer, then initialize menu
-      Promise.all([
-          fetch("/public/partials/header.html").then(res => res.text()),
-          fetch("/public/partials/footer.html").then(res => res.text())
-      ]).then(([headerHtml, footerHtml]) => {
-          document.getElementById("header").innerHTML = headerHtml;
-          document.getElementById("footer").innerHTML = footerHtml;
-    
-          // Delay menu initialization until header is inserted
-          setTimeout(() => initializeMenu(), 100);
-      });
-    </script>
+    <script type="module">
+      import { loadPartials } from './public/js/utils.js';
+      
+      // Load partials when the page loads
+      document.addEventListener('DOMContentLoaded', loadPartials);
+  </script>
     
 
     <!-- Load menu.js separately after header/footer load -->
-    <script src="./public/js/menu.js" type="module"></script>
+    <script src="/js/menu.js" type="module"></script> 
 
 
 
