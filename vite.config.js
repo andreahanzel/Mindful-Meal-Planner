@@ -1,20 +1,38 @@
 import { resolve } from "path";
-import { defineConfig } from "vite";
+import { defineConfig, loadEnv } from "vite";
 
-export default defineConfig({
-  root: "src/", // Set the root directory
-  base: "/", // Base path
+
+export default defineConfig(({ mode }) => {
+  // Load environment variables based on the mode
+  const env = loadEnv(mode, process.cwd(), "");
+
+  return {
+  root: "src/",
+  base: "/",
   build: {
-    outDir: "../dist", // Output folder (moves outside /src)
-    emptyOutDir: true, // Clean build before new output
+    outDir: "../dist",
+    emptyOutDir: true,
     rollupOptions: {
       input: {
-        main: resolve(__dirname, "src/index.html"), // Main entry point
+        main: resolve(__dirname, "src/index.html"),
       },
     },
   },
+
   server: {
-    port: 5173, // Use default Vite port
-    open: true, // Automatically open browser on `npm run dev`
+    historyApiFallback: true,
+    port: 5173, 
+    open: true,
   },
+
+  define: {
+    "import.meta.env.VITE_SERVER_URL": JSON.stringify(env.VITE_SERVER_URL),
+    "import.meta.env.VITE_SPOONACULAR_API_KEY": JSON.stringify(env.VITE_SPOONACULAR_API_KEY),
+    "import.meta.env.VITE_EDAMAM_APP_ID": JSON.stringify(env.VITE_EDAMAM_APP_ID),
+    "import.meta.env.VITE_EDAMAM_API_KEY": JSON.stringify(env.VITE_EDAMAM_API_KEY),
+  },
+  };
 });
+
+
+

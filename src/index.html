@@ -80,15 +80,17 @@
     <script>
       // Load header and footer, then initialize menu
       Promise.all([
-          fetch("./public/partials/header.html").then(res => res.text()),
-          fetch("./public/partials/footer.html").then(res => res.text())
+          fetch("/public/partials/header.html").then(res => res.text()),
+          fetch("/public/partials/footer.html").then(res => res.text())
       ]).then(([headerHtml, footerHtml]) => {
           document.getElementById("header").innerHTML = headerHtml;
           document.getElementById("footer").innerHTML = footerHtml;
-          // Initialize menu only after header is loaded
-          initializeMenu();
+    
+          // Delay menu initialization until header is inserted
+          setTimeout(() => initializeMenu(), 100);
       });
-  </script>
+    </script>
+    
 
     <!-- Load menu.js separately after header/footer load -->
     <script src="./public/js/menu.js" type="module"></script>
