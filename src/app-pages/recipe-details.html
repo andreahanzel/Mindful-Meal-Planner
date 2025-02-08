@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Details - Mindful Meal Planner</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="icon" type="image/png" href="/images/favicon.png">
+</head>
+<body>
+    <!-- HEADER -->
+    <header id="header"></header>
+
+    <main class="recipe-details-container">
+        <!-- Back button with breadcrumb style -->
+        <div class="breadcrumb">
+            <a href="/app-pages/recipe-search.html" class="back-link">
+                <span class="arrow">←</span> Back to Search
+            </a>
+        </div>
+
+        <div class="recipe-details-hero">
+            <div class="recipe-hero-content">
+                <h1 id="recipe-title"></h1>
+                <div class="recipe-quick-info">
+                    <span id="recipe-calories" class="info-badge"></span>
+                    <span id="recipe-time" class="info-badge"></span>
+                    <span id="recipe-servings" class="info-badge"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="recipe-content-grid">
+            <!-- Left Column -->
+            <div class="recipe-main-content">
+                <div class="recipe-image-container">
+                    <img id="recipe-image" src="" alt="Recipe Image">
+                    <button class="btn-primary save-recipe" id="save-recipe">
+                        <span class="heart-icon">♥</span> Save Recipe
+                    </button>
+                </div>
+
+                <div class="recipe-ingredients-section">
+                    <h2>Ingredients</h2>
+                    <ul id="ingredients-list" class="ingredients-list"></ul>
+                </div>
+
+                <div class="recipe-instructions-section">
+                    <h2>Instructions</h2>
+                    <div id="instructions-list" class="instructions-list"></div>
+                </div>
+            </div>
+
+            <!-- Right Column -->
+            <div class="recipe-sidebar">
+                <div class="nutrition-card">
+                    <h2>Nutrition Facts</h2>
+                    <div class="nutrition-grid" id="nutrition-info"></div>
+                </div>
+            </div>
+        </div>
+
+      <section class="similar-recipes-section">
+        <h2>You Might Also Like</h2>
+        <div id="similar-recipes" class="similar-recipes-grid">
+            <!-- Similar recipes will be populated here -->
+        </div>
+</section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer id="footer"></footer>
+
+    <script type="module">
+        import { loadPartials } from '/js/utils.js';
+        import { initializeRecipeDetails } from '/js/recipeDetails.js';
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            loadPartials();
+            initializeRecipeDetails();
+        });
+    </script>
+</body>
+</html>

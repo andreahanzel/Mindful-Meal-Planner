@@ -1,51 +1,54 @@
 // api.js
 const EDAMAM_APP_ID = import.meta.env.VITE_EDAMAM_APP_ID;
 const EDAMAM_API_KEY = import.meta.env.VITE_EDAMAM_API_KEY;
+const SPOONACULAR_API_KEY = import.meta.env.VITE_SPOONACULAR_API_KEY;
 
 console.warn('Environment Variables:', {
-  EDAMAM_APP_ID,
-  EDAMAM_API_KEY
+    EDAMAM_APP_ID,
+    EDAMAM_API_KEY
 });
 
+console.warn("Spoonacular API Key:", import.meta.env.VITE_SPOONACULAR_API_KEY);
+
 export async function searchRecipes(query, diet = '') {
-  try {
-      console.warn('API Credentials:', {
-          appId: EDAMAM_APP_ID,
-          appKey: EDAMAM_API_KEY
-      });
+    try {
+        console.warn('API Credentials:', {
+            appId: EDAMAM_APP_ID,
+            appKey: EDAMAM_API_KEY
+        });
 
-      const baseUrl = 'https://api.edamam.com/api/recipes/v2';
-      let url = `${baseUrl}?type=public&app_id=${EDAMAM_APP_ID}&app_key=${EDAMAM_API_KEY}&q=${query}`;
-      
-      if (diet) {
-          url += `&health=${diet}`;
-      }
+        const baseUrl = 'https://api.edamam.com/api/recipes/v2';
+        let url = `${baseUrl}?type=public&app_id=${EDAMAM_APP_ID}&app_key=${EDAMAM_API_KEY}&q=${query}`;
+        
+        if (diet) {
+            url += `&health=${diet}`;
+        }
 
-      console.warn('Fetching from URL:', url.toString());
+        console.warn('Fetching from URL:', url.toString());
 
-      // Add headers for authentication
-      const response = await fetch(url, {
-          method: 'GET',
-          headers: {
-              'Accept': 'application/json',
-              'Edamam-Account-User': 'andreatoreki' // Your Edamam username from the account
-          }
-      });
+        // Add headers for authentication
+        const response = await fetch(url, {
+            method: 'GET',
+            headers: {
+                'Accept': 'application/json',
+                'Edamam-Account-User': 'andreatoreki'
+            }
+        });
 
-      if (!response.ok) {
-          console.error('Response status:', response.status);
-          const errorData = await response.json();
-          console.error('Error details:', errorData);
-          throw new Error(`API Error: ${errorData.message || response.statusText}`);
-      }
+        if (!response.ok) {
+            console.error('Response status:', response.status);
+            const errorData = await response.json();
+            console.error('Error details:', errorData);
+            throw new Error(`API Error: ${errorData.message || response.statusText}`);
+        }
 
-      const data = await response.json();
-      console.warn('API Response:', data);
-      return data.hits;
-  } catch (error) {
-      console.error('Error fetching recipes:', error);
-      throw error;
-  }
+        const data = await response.json();
+        console.warn('API Response:', data);
+        return data.hits;
+    } catch (error) {
+        console.error('Error fetching recipes:', error);
+        throw error;
+    }
 }
 
 export function initializeRecipeSearch() {
@@ -62,9 +65,9 @@ export function initializeRecipeSearch() {
 
             console.warn('Starting search with:', { query, diet });
             console.warn('Environment variables:', {
-              appId: import.meta.env.VITE_EDAMAM_APP_ID,
-              appKey: import.meta.env.VITE_EDAMAM_API_KEY
-        });
+                appId: import.meta.env.VITE_EDAMAM_APP_ID,
+                appKey: import.meta.env.VITE_EDAMAM_API_KEY
+            });
 
             if (!query) {
                 resultsContainer.innerHTML = '<p>Please enter a search term</p>';
@@ -141,4 +144,81 @@ export function initializeRecipeSearch() {
         console.error('API credentials are missing');
         resultsContainer.innerHTML = '<p class="error">API configuration error. Please check your environment variables.</p>';
     }
+}
+
+
+// Similar Recipes
+export async function getSimilarRecipes(recipeName) {
+  try {
+      console.warn("🔹 Spoonacular API call started with:", { query: recipeName });
+
+      const keywords = recipeName.split(" "); // Get words from recipe name
+      let searchQuery = recipeName; 
+
+      let searchData = null;
+      let recipeId = null;
+
+      for (let i = 0; i < keywords.length; i++) {
+          console.warn(`🔄 Trying search with: ${searchQuery}`);
+          
+          const searchResponse = await fetch(
+              `https://api.spoonacular.com/recipes/complexSearch?query=${encodeURIComponent(searchQuery)}&number=1&apiKey=${SPOONACULAR_API_KEY}`
+          );
+
+          searchData = await searchResponse.json();
+          console.warn("🔹 Search API Response:", searchData);
+
+          if (searchData.results && searchData.results.length > 0) {
+              recipeId = searchData.results[0].id;
+              console.warn("✅ Found Recipe ID:", recipeId);
+              break;
+          }
+
+          searchQuery = keywords[0];
+      }
+
+      if (!recipeId) {
+          console.warn("⚠️ No valid recipe ID found. Cannot fetch similar recipes.");
+          return [];
+      }
+
+      // 🔹 Step 2: Get Similar Recipes
+      const response = await fetch(
+          `https://api.spoonacular.com/recipes/${recipeId}/similar?number=3&apiKey=${SPOONACULAR_API_KEY}`
+      );
+
+      const similarRecipes = await response.json();
+      console.warn("🔹 Similar Recipes API Response:", similarRecipes);
+
+      if (!similarRecipes || similarRecipes.length === 0) {
+          console.warn("⚠️ No similar recipes found.");
+          return [];
+      }
+
+      // 🔹 Step 3: Fetch images & calories for each similar recipe
+      const recipesWithDetails = await Promise.all(similarRecipes.map(async (recipe) => {
+          const detailsResponse = await fetch(
+              `https://api.spoonacular.com/recipes/${recipe.id}/information?includeNutrition=true&apiKey=${SPOONACULAR_API_KEY}`
+          );
+
+          if (!detailsResponse.ok) {
+              console.warn(`⚠️ Failed to fetch details for recipe ID: ${recipe.id}`);
+              return { ...recipe, image: "", calories: "N/A" };
+          }
+
+          const detailsData = await detailsResponse.json();
+          return { 
+              ...recipe, 
+              image: detailsData.image || "", 
+              calories: detailsData.nutrition?.nutrients?.find(n => n.name === "Calories")?.amount || "N/A"
+          };
+      }));
+
+      console.warn("✅ Final Recipes with Images & Calories:", recipesWithDetails);
+      return recipesWithDetails;
+
+  } catch (error) {
+      console.error("🚨 Error fetching similar recipes:", error);
+      throw error;
+  }
 }

@@ -536,12 +536,690 @@ h3 {
   display: none;
 }
 
+/* Recipe Details Styles */
+.recipe-details-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.breadcrumb {
+  margin: 20px 0;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  color: var(--green-dark);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.back-link:hover {
+  color: var(--orange-dark);
+}
+
+.arrow {
+  margin-right: 8px;
+  font-size: 1.2em;
+}
+
+.recipe-details-hero {
+  background: linear-gradient(to right, var(--green-dark), var(--green-medium));
+  color: white;
+  padding: 40px 20px;
+  border-radius: 15px;
+  margin-bottom: 30px;
+}
+
+.recipe-hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.recipe-hero-content h1 {
+  color: white;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.recipe-quick-info {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.info-badge {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+.recipe-content-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.recipe-image-container {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.recipe-image-container img {
+  width: 100%;
+  height: auto; /* Maintain aspect ratio */
+  object-fit: contain; /* Ensures the full image is visible */
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  display: grid;
+}
+
+.save-recipe {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  padding: 12px 24px;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--orange-dark);
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.save-recipe:hover {
+  transform: scale(1.05);
+}
+
+.heart-icon {
+  color: white;
+}
+
+.recipe-ingredients-section,
+.recipe-instructions-section {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.ingredients-list {
+  list-style: none;
+  padding: 0;
+}
+
+.ingredients-list li {
+  padding: 12px 0;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  align-items: center;
+}
+
+.ingredients-list li:before {
+  content: "•";
+  color: var(--green-medium);
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.nutrition-card {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 20px;
+}
+
+.nutrient-item {
+  margin-bottom: 20px;
+}
+
+.nutrient-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.nutrient-bar {
+  background: #f0f0f0;
+  height: 8px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.nutrient-fill {
+  background: var(--green-medium);
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.instruction-step {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+  padding: 15px;
+  background: #f9f9f9;
+  border-radius: 8px;
+}
+
+.step-number {
+  background: var(--green-medium);
+  color: white;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.instruction-step p {
+  margin: 0;
+  line-height: 1.5;
+ 
+}
+
+.instructions-list a {
+  color: var(--orange-dark); 
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.instructions-list a:hover {
+  color: black; /* Darken on hover for better visibility */
+}
+
+
+/* Similar Recipes Section */
+.similar-recipes-section {
+  margin: 40px 0;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 15px;
+}
+
+.similar-recipes-section h2 {
+  text-align: center;
+  color: var(--green-dark);
+  margin-bottom: 30px;
+}
+
+.similar-recipes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  width: 100%;
+  padding: 20px;
+}
+
+.similar-recipe-card {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+.similar-recipe-card:hover {
+  transform: translateY(-5px);
+}
+
+.similar-recipe-card img {
+  width: 100%;
+  aspect-ratio: 16/9; /* Maintains aspect ratio */
+  object-fit: cover;
+  display: block;
+}
+
+.similar-recipe-info {
+  display: grid;
+  grid-template-rows: auto auto auto; /* First row: h3, Second: recipe-meta, Third: button */
+  align-items: center;
+  justify-items: center;
+  padding: 15px;
+  text-align: center;
+  gap: 10px; /* Ensures proper spacing between elements */
+
+}
+
+
+.similar-recipe-info h3 {
+  color: var(--text-dark);
+  margin-bottom: 30px;
+}
+
+.similar-recipes-section p {
+  text-align: center;
+  color: var(--text-dark);
+  padding: 20px;
+  background: #f5f5f5;
+  border-radius: 8px;
+  margin: 20px 0;
+  margin-bottom: 60px;
+}
+
+.recipe-meta {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 10px;
+  
+}
+
+
+.recipe-meta span {
+  background: rgba(0, 122, 51, 0.1); /* Added subtle background for visibility */
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.btn-secondary .save-recipe {
+  display: grid;
+  width: 100%;
+  padding: 10px;
+  background: var(--green-dark);
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: auto;
+  transition: background 0.3s ease;
+  align-self: end;
+}
+
+.btn-secondary .save-recipe:hover {
+  background: var(--green-medium);
+}
+
+
+/* MEAL PLANNER STYLES */
+
+.meal-planner-container {
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Responsive Table */
+.meal-planner {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.meal-planner th, .meal-planner td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: center;
+}
+
+.meal-planner th {
+  background: var(--green-dark);
+  color: white;
+}
+
+.meal-planner td {
+  background: white;
+  cursor: pointer;
+}
+
+.meal-planner td:hover {
+  background: rgba(0, 122, 51, 0.2);
+}
+
+/* Buttons */
+.btn-mealplanner {
+  background: var(--orange-medium);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 15px;
+}
+
+.btn-mealplanner:hover {
+  background: var(--orange-dark);
+}
+
+/* Modal Styles */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 400px;
+  text-align: center;
+  position: relative;
+}
+
+/* Close Button */
+.close-modal {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
+/* Meal List */
+#meal-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 15px;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+#meal-list li {
+  padding: 10px;
+  background: var(--green-light);
+  color: white;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#meal-list li:hover {
+  background: var(--green-dark);
+}
+
+/* Meal Selection Modal */
+.meal-selection-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.meal-selection-modal .modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+  text-align: center;
+}
+
+.meal-selection-modal select, .meal-selection-modal button {
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+  font-size: 1rem;
+}
+
+.meal-selection-modal button {
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+}
+
+#confirm-add-meal {
+  background: #007A33;
+  color: white;
+}
+
+#cancel-add-meal {
+  background: #C74A00;
+  color: white;
+}
+
+#confirm-add-meal:hover, #cancel-add-meal:hover {
+  opacity: 0.8;
+}
+
+/* ==== SAVED MEALS SECTION ==== */
+.saved-meals-container {
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.saved-meals-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--green-dark);
+  margin-bottom: 20px;
+}
+
+/* Grid layout for saved recipes */
+.saved-meals-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Adjusts dynamically */
+  gap: 20px;
+  justify-content: center;
+}
+
+/* Individual Recipe Card */
+.saved-meal-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px var(--shadow);
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.saved-meal-card:hover {
+  transform: scale(1.02);
+}
+
+/* Recipe Image */
+.saved-meal-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+/* Recipe Info */
+.saved-meal-info {
+  padding: 15px;
+}
+
+.saved-meal-info h3 {
+  font-size: 1.2rem;
+  color: var(--text-dark);
+  margin-bottom: 10px;
+}
+
+.saved-meal-info p {
+  font-size: 1rem;
+  color: var(--text-dark);
+  margin-bottom: 15px;
+}
+
+/* Buttons */
+.saved-meal-actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px;
+}
+
+.btn-add-meal, .btn-remove-meal {
+  padding: 8px 12px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+.btn-add-meal {
+  background: var(--green-dark);
+  color: white;
+}
+
+.btn-remove-meal {
+  background: var(--orange-dark);
+  color: white;
+}
+
+.btn-add-meal:hover, .btn-remove-meal:hover {
+  opacity: 0.8;
+}
+
+/* ==== Shopping List Page Styling ==== */
+
+.shopping-list-container {
+  max-width: 800px;
+  margin: 40px auto;
+  text-align: center;
+  padding: 30px;
+  background: #fffaf0;
+  color: #333;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.shopping-list-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: black;
+  margin-bottom: 15px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.shopping-list-container p {
+  font-size: 1.2rem;
+  color: black;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  font-style: italic;
+}
+
+
+/* Shopping List elements */
+#shopping-list {
+  list-style: none;
+  margin: 20px 0;
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  padding-left: 20px; /* Ensures bullets are visible */
+}
+
+#shopping-list li {
+  background: var(--white);
+  border: 2px solid var(--green-dark);
+  padding: 15px 20px;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  display: flex; /* Fix alignment */
+  align-items: center; /* Center items properly */
+  gap: 10px; /* Adds spacing */
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.1);
+  list-style-position: inside; /* Ensures text stays next to bullet */
+}
+
+#shopping-list li:nth-child(even) {
+  background: var(--green-light);
+}
+
+#shopping-list li:hover {
+  background: var(--green-medium);
+  color: white;
+  transform: scale(1.02);
+  box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* ==== Remove Item Button ==== */
+.btn-remove-item {
+  background: var(--orange-dark);
+  color: white;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.btn-remove-item:hover {
+  background: var(--orange-medium);
+  transform: scale(1.1);
+}
+
+/* ==== Clear & Back Buttons ==== */
+.btn-container {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+#clear-shopping-list,
+.btn-mealplanner {
+  background: var(--orange-medium);
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+#clear-shopping-list:hover,
+.btn-mealplanner:hover {
+  background: var(--orange-dark);
+  transform: scale(1.05);
+  box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.3);
+}
+
+
+/* ==== Animations ==== */
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
 
-/* ==== Animations ==== */
 @keyframes fadeIn {
   from {
       opacity: 0;
@@ -563,6 +1241,8 @@ h3 {
       transform: translateX(0);
   }
 }
+
+
 
 /* ==== Mobile Responsive ==== */
 @media (max-width: 768px) {
@@ -748,6 +1428,74 @@ h3 {
 .results-grid {
   grid-template-columns: 1fr;
   gap: 20px;
+}
+
+.recipe-content-grid {
+  grid-template-columns: 1fr;
+}
+
+.recipe-hero-content h1 {
+  font-size: 2rem;
+}
+
+.recipe-quick-info {
+  flex-direction: column;
+  align-items: center;
+}
+
+.nutrition-card {
+  position: static;
+}
+
+.similar-recipes-grid {
+  display: grid;
+  align-items: center;
+}
+
+.meal-planner {
+  font-size: 0.9rem;
+}
+
+.meal-planner th, .meal-planner td {
+  padding: 8px;
+}
+
+.modal-content {
+  width: 90%;
+}
+
+.saved-meals-grid {
+  grid-template-columns: 1fr; /* Single column on mobile */
+}
+
+.shopping-list-container {
+  width: 90%;
+  padding: 20px;
+}
+
+.shopping-list-title {
+  font-size: 2rem;
+}
+
+.shopping-list-items li {
+  font-size: 1rem;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 12px;
+}
+
+.btn-remove-item {
+  margin-top: 5px;
+}
+
+.btn-container {
+  flex-direction: column;
+}
+
+#clear-shopping-list,
+.btn-mealplanner {
+  font-size: 1rem;
+  padding: 10px 18px;
 }
 }
 

@@ -16,9 +16,9 @@ export default defineConfig(({ mode }) => {
       input: {
         main: resolve(__dirname, "src/index.html"),
         recipeSearch: resolve(__dirname, "src/app-pages/recipe-search.html"),
-        // Add partials to the build
-        // header: resolve(__dirname, "src/public/partials/header.html"),
-        // footer: resolve(__dirname, "src/public/partials/footer.html"),
+        recipeDetails: resolve(__dirname, "src/app-pages/recipe-details.html"),
+        mealPlanner: resolve(__dirname, "src/app-pages/meal-planner.html"),
+        shoppingList: resolve(__dirname, "src/app-pages/shopping-list.html"),
       },
     },
   },

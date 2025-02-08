@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meal Planner - Mindful Meal Planner</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="icon" type="image/png" href="/images/favicon.png">
+</head>
+<body>
+    <!-- HEADER -->
+    <header id="header"></header>
+
+    <main class="meal-planner-container">
+        <h1>Weekly Meal Planner</h1>
+        <p>Plan your meals for the week and keep track of nutrition!</p>
+
+        <section class="saved-meals-container">
+          <h2 class="saved-meals-title">Saved Recipes</h2>
+          <div id="saved-meals-grid" class="saved-meals-grid"></div>
+      </section>      
+
+        <!-- Meal Planner Table -->
+        <table class="meal-planner">
+            <thead>
+                <tr>
+                    <th>Day</th>
+                    <th>Breakfast</th>
+                    <th>Lunch</th>
+                    <th>Dinner</th>
+                    <th>Snacks</th>
+                    <th>Calories</th>
+                </tr>
+            </thead>
+            <tbody id="meal-plan-body">
+                <!-- Rows will be dynamically added -->
+            </tbody>
+        </table>
+        <button id="clear-plan" class="btn-mealplanner">Clear Plan</button>
+        <button id="generate-shopping-list" class="btn-mealplanner">Generate Shopping List</button>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer id="footer"></footer>
+
+    <script type="module">
+        import { loadPartials } from '/js/utils.js';
+        import { initializeMealPlanner } from '/js/mealPlanner.js';
+
+        document.addEventListener('DOMContentLoaded', () => {
+            loadPartials();
+            initializeMealPlanner();
+        });
+    </script>
+</body>
+</html>
