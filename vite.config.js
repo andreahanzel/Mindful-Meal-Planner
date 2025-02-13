@@ -19,6 +19,7 @@ export default defineConfig(({ mode }) => {
         recipeDetails: resolve(__dirname, "src/app-pages/recipe-details.html"),
         mealPlanner: resolve(__dirname, "src/app-pages/meal-planner.html"),
         shoppingList: resolve(__dirname, "src/app-pages/shopping-list.html"),
+        settings: resolve(__dirname, "src/app-pages/settings.html"),
       },
     },
   },

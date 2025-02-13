@@ -25,6 +25,12 @@ export default [
         URLSearchParams: true,
         MutationObserver: true,
         CustomEvent: true,
+        Notification: true,  // Add Notification HERE
+        prompt: true,        // Add prompt HERE
+        setInterval: true,   // Add setInterval HERE
+        clearInterval: true, // Add clearInterval HERE
+        Event: true // Add Event HERE
+
       },
     },
     rules: {

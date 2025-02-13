@@ -4,7 +4,7 @@
           <div class="column">
               <h3>Quick Links</h3>
               <ul>
-                  <li><a href="/">Home</a></li>  <!-- Changed from ./index.html -->
+                  <li><a href="/">Home</a></li>
                   <li><a href="/app-pages/recipe-search.html">Recipe Search</a></li>
                   <li><a href="/app-pages/meal-planner.html">Meal Planner</a></li>
                   <li><a href="/app-pages/shopping-list.html">Shopping List</a></li>
@@ -16,14 +16,18 @@
               <p>Mindful Meal Planner helps you create healthy meal plans and organize grocery lists effortlessly.</p>
           </div>
           <div class="column">
-              <form>
-                  <input type="email" placeholder="Enter your email" required>
-                  <button type="submit">Subscribe</button>
-              </form>
-          </div>
+            <h3>Subscribe for Updates</h3>
+            <form id="footer-newsletter-form">
+                <label for="footer-newsletter-email" class="visually-hidden">Email Address</label>
+                <input type="email" id="footer-newsletter-email" placeholder="Enter your email" required>
+                <button type="submit">Subscribe</button>
+            </form>
+            <p id="footer-newsletter-message"></p> <!-- Message area for feedback -->
+        </div>
       </div>
       <div class="footer-bottom">
           <p>© 2024 Mindful Meal Planner. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
       </div>
   </div>
 </footer>
+

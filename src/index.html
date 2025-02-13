@@ -21,8 +21,8 @@
                 <h1>Plan Your Meals with Ease</h1>
                 <p>Discover healthy recipes, organize your meals, and simplify grocery shopping.</p>
                 <div class="buttons">
-                    <button class="btn-primary">Get Started</button>
-                    <button class="btn-secondary">Learn More</button>
+                  <button class="btn-primary" onclick="location.href='/app-pages/recipe-search.html'">Get Started</button>
+                    <button class="btn-secondary" onclick="location.href='/app-pages/settings.html'">Learn More</button>
                 </div>
             </div>
             <div class="hero-image">
@@ -52,26 +52,85 @@
             </div>
         </section>
 
-        <!-- TESTIMONIALS -->
-        <section class="testimonials">
-            <h2>What Our Users Say</h2>
-            <div class="testimonial-content">
-                <blockquote>
-                    "This app transformed my eating habits. Meal planning has never been easier!"
-                    <cite>- Sarah J.</cite>
-                </blockquote>
-            </div>
-        </section>
+        <!-- Testimonials Section -->
+<section class="testimonials">
+  <h2>What Our Users Say</h2>
+  <div class="testimonial-wrapper">
+      <button class="scroll-btn left">‹</button>
+      <div class="testimonial-scroll">
+          <!-- Testimonial 1 -->
+          <div class="testimonial-content">
+              <blockquote>"This app transformed my eating habits. Meal planning has never been easier!"</blockquote>
+              <div class="user-info">
+                  <div class="user-avatar">
+                    <img src="/images/sarah.jpg" alt="Sarah J.">
+                  </div>
+                  <div class="user-details">
+                      <div class="user-name">Sarah J.</div>
+                      <div class="user-role">Verified User</div>
+                  </div>
+              </div>
+          </div>
+
+          <!-- Testimonial 2 -->
+          <div class="testimonial-content">
+              <blockquote>"I save so much time on grocery shopping now!"</blockquote>
+              <div class="user-info">
+                  <div class="user-avatar">
+                    <img src="/images/mark.jpg" alt="Mark T.">
+                  </div>
+                  <div class="user-details">
+                      <div class="user-name">Mark T.</div>
+                      <div class="user-role">Verified User</div>
+                  </div>
+              </div>
+          </div>
+
+          <!-- Testimonial 3 -->
+          <div class="testimonial-content">
+              <blockquote>"A must-have app for anyone trying to eat healthier!"</blockquote>
+              <div class="user-info">
+                  <div class="user-avatar">
+                    <img src="/images/emily.jpg" alt="Emily R.">
+                  </div>
+                  <div class="user-details">
+                      <div class="user-name">Emily R.</div>
+                      <div class="user-role">Verified User</div>
+                  </div>
+              </div>
+          </div>
+
+          <!-- Testimonial 4 -->
+          <div class="testimonial-content">
+              <blockquote>"Planning meals is now fun and stress-free!"</blockquote>
+              <div class="user-info">
+                  <div class="user-avatar">
+                      <img src="/images/daniel.jpg" alt="Daniel M.">
+                  </div>
+                  <div class="user-details">
+                      <div class="user-name">Daniel M.</div>
+                      <div class="user-role">Verified User</div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <button class="scroll-btn right">›</button>
+  </div>
+</section>
 
         <!-- NEWSLETTER -->
         <section class="newsletter">
-            <h2>Subscribe for Updates</h2>
-            <form>
-                <input type="email" placeholder="Enter your email" required>
-                <button type="submit">Subscribe</button>
-            </form>
-        </section>
-
+          <h2>Subscribe for Updates</h2>
+          <div class="newsletter-form-container">
+              <form id="newsletter-form">
+                  <label for="newsletter-email" class="visually-hidden">Email Address</label>
+                  <input type="email" id="newsletter-email" placeholder="Enter your email" required>
+                  <button type="submit">Subscribe</button>
+              </form>
+              <p id="newsletter-message"></p> <!-- Message area for feedback -->
+          </div>
+      </section>
+      
     </main>
 
     <!-- FOOTER -->
@@ -85,6 +144,10 @@
 
   
   <script src="./js/menu.js" type="module"></script>
+  <script src="./js/testimonials.js" type="module"></script>
+  <script src="./js/newsletter.js" type="module"></script>
+
+
 
 </body>
 </html>
