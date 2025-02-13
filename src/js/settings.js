@@ -88,6 +88,7 @@ export function initializeSettingsToggle() {
   });
 }
 
+// | New: Added function to apply setting changes
 function applySettingChange(settingId, isEnabled) {
   console.warn(`Applying setting change: ${settingId} = ${isEnabled}`);
 
@@ -206,7 +207,7 @@ function collectRecipeData() {
     ingredients: ['Ingredient 1', 'Ingredient 2']
   };
 }
-
+// New function to show feedback message
 function showFeedbackMessage(settingId, isEnabled) {
   const toggle = document.getElementById(settingId);
   if (!toggle) {
