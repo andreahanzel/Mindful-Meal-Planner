@@ -1,6 +1,6 @@
 // utils.js
 import { initializeMenu } from './menu.js';
-import { initializeFooterNewsletter } from './footerNewsletter.js';
+import { initializeFooterNewsletter } from './footernewsletter.js';
 
 
 
