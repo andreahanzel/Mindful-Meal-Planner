@@ -12,41 +12,65 @@
     <header id="header"></header>
 
     <main class="settings-container">
-        <h1>User Preferences / Settings</h1>
+
+   
+      <section>
+        <div>
+          <div>
+            <h1>User Preferences / Settings</h1>
 
         <!-- User Preferences Section -->
-        <section class="user-preferences">
-            <h2>Preferences</h2>
-            <div class="preference-item">
-              <label for="notifications" class="preference-label">Enable Notifications</label>
-              <div class="toggle-switch">
-                  <input type="checkbox" id="notifications" class="toggle-input">
-                  <label for="notifications" class="toggle-slider"></label>
-              </div>
-            </div>
 
-            <div class="preference-item">
-              <label for="dark-mode" class="preference-label">Dark Mode</label>
-              <div class="toggle-switch">
-                  <input type="checkbox" id="dark-mode" class="toggle-input">
-                  <label for="dark-mode" class="toggle-slider"></label>
-              </div>
-          </div>
+        <!-- Enable Notification -->
+<div class="preference-item">
+  <span class="preference-label">Enable Notifications</span>
+  <div class="toggle-switch">
+      <input type="checkbox" id="notifications" class="toggle-input">
+      <label for="notifications" class="toggle-slider-label">
+          <span class="toggle-slider"></span>
+          <span class="visually-hidden">Enable Notifications</span>
+      </label>
+  </div>
+</div>
+      
+      
+    <!-- DARK MODE -->
+<div class="preference-item">
+  <span class="preference-label">Dark Mode</span>
+  <div class="toggle-switch">
+      <input type="checkbox" id="dark-mode" class="toggle-input">
+      <label for="dark-mode" class="toggle-slider-label">
+          <span class="toggle-slider"></span>
+          <span class="visually-hidden">Dark Mode</span>
+      </label>
+  </div>
+</div>
+  
+  
+    <!-- EMAIL UPDATES -->
+    <div class="preference-item">
+      <span class="preference-label">Email Updates</span>
+      <div class="toggle-switch">
+          <input type="checkbox" id="email-updates" class="toggle-input">
+          <label for="email-updates" class="toggle-slider-label">
+              <span class="toggle-slider"></span>
+              <span class="visually-hidden">Email Updates</span>
+          </label>
+      </div>
+  </div>
 
-          <div class="preference-item">
-            <label for="email-updates" class="preference-label">Email Updates</label>
-            <div class="toggle-switch">
-                <input type="checkbox" id="email-updates" class="toggle-input">
-                <label for="email-updates" class="toggle-slider"></label>
-            </div>
-        </div>
 
-        <div class="preference-item">
-          <label for="auto-save" class="preference-label">Auto-Save Recipes</label>
-          <div class="toggle-switch">
-              <input type="checkbox" id="auto-save" class="toggle-input">
-              <label for="auto-save" class="toggle-slider"></label>
-          </div>
+    <!-- AUTO-SAVE -->
+    <div class="preference-item">
+      <span class="preference-label">Auto-Save Recipes</span>
+      <div class="toggle-switch">
+          <input type="checkbox" id="auto-save" class="toggle-input">
+          <label for="auto-save" class="toggle-slider-label">
+              <span class="toggle-slider"></span>
+              <span class="visually-hidden">Auto-Save Recipes</span>
+          </label>
+      </div>
+  </div>
       </div>
             </div>
         </section>

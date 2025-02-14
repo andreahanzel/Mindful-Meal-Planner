@@ -337,12 +337,12 @@ h3 {
   position: absolute;
   width: 1px;
   height: 1px;
-  padding: 0;
   margin: -1px;
+  padding: 0;
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
-  border: 0;
   white-space: nowrap;
+  border: 0;
 }
 
 .newsletter-form-container {
@@ -393,7 +393,7 @@ h3 {
   margin: 0 auto;
   flex-wrap: wrap;
   text-align: left;
-  gap: 30px;
+  gap: 20px;
 }
 
 .footer-grid a {
@@ -409,11 +409,11 @@ h3 {
 .footer-grid .column {
   flex: 1;
   min-width: 250px;
-  padding: 15px;
+  padding: 50px;
 }
 
 .footer-grid h3 {
-  margin-bottom: 15px;
+  margin-bottom: 40px;
   font-size: 1.5rem;
   color: #FFA400; /* Accent color for headings */
   position: relative;
@@ -432,7 +432,7 @@ h3 {
 }
 
 .footer-bottom {
-  margin-top: 40px;
+  margin-top: 10px;
   font-size: 0.9rem;
   border-top: 1px solid rgba(255, 255, 255, 0.1); /* Subtle top border */
   padding-top: 20px;
@@ -470,8 +470,9 @@ h3 {
 }
 
 .footer-grid input {
-  padding: 12px;
-  width: 200px;
+  padding: 15px;
+  width: 300px;
+  margin-left: 10px;
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 5px;
   font-size: 1rem;
@@ -994,9 +995,12 @@ h3 {
 
 .meal-planner-container {
   max-width: 1200px;
+  min-width: 100px;
   margin: auto;
   text-align: center;
   padding: 20px;
+  overflow: auto;
+  width: auto;
 }
 
 /* Responsive Table */
@@ -1004,12 +1008,16 @@ h3 {
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
+  margin: 20px 0;
 }
 
 .meal-planner th, .meal-planner td {
   border: 1px solid #ddd;
   padding: 12px;
   text-align: center;
+  font-size: 14px;
+  word-wrap: break-word;
+  max-width: 100%; /* or set to 100% */
 }
 
 .meal-planner th {
@@ -1057,12 +1065,13 @@ h3 {
 
 .modal-content {
   background: white;
-  padding: 20px;
-  border-radius: 10px;
-  width: 80%;
-  max-width: 400px;
+  padding: 30px;
+  border-radius: 12px;
+  width: 400px;
+  max-width: 90%;
   text-align: center;
   position: relative;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 /* Close Button */
@@ -1098,46 +1107,74 @@ h3 {
 
 /* Meal Selection Modal */
 .meal-selection-modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
-  display: flex;
-  align-items: center;
-  justify-content: center;
   z-index: 1000;
 }
 
 .meal-selection-modal .modal-content {
   background: white;
-  padding: 20px;
-  border-radius: 10px;
-  width: 300px;
-  text-align: center;
+  padding: 30px;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 400px;
+  position: relative;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
-.meal-selection-modal select, .meal-selection-modal button {
-  width: 100%;
-  margin-top: 10px;
+/* Modal Header */
+.meal-selection-modal h2 {
+  color: var(--green-dark);
+  margin-bottom: 25px;
+  font-size: 1.5rem;
+}
+
+.meal-selection-modal h2 {
+  font-size: 1.5rem; /* Adjusted for better readability on mobile */
+  margin-bottom: 15px;
+}
+
+.meal-selection-modal label {
+  display: block;
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+.meal-selection-modal select {
+  width: calc(100% - 20px); /* Ensures dropdown fits within modal */
   padding: 10px;
   font-size: 1rem;
+  margin-bottom: 15px;
 }
 
 .meal-selection-modal button {
-  cursor: pointer;
+  width: calc(50% - 10px);
+  padding: 12px;
+  margin: 5px;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-#confirm-add-meal {
-  background: #007A33;
+#confirm-add-meal,
+#remove-meal,
+#change-meal {
+  background: var(--green-dark);
   color: white;
 }
 
-#cancel-add-meal {
-  background: #C74A00;
+
+#cancel-add-meal,
+#cancel {
+  background: var(--orange-dark);
   color: white;
 }
 
@@ -1240,14 +1277,14 @@ h3 {
 /* ==== Shopping List Page Styling ==== */
 
 .shopping-list-container {
-  max-width: 800px;
+  max-width: 900px;
+  width: 95%; /* Changed from fixed width */
   margin: 40px auto;
-  text-align: center;
   padding: 30px;
   background: #fffaf0;
   color: #333;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
 }
 
 .shopping-list-title {
@@ -1258,41 +1295,99 @@ h3 {
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
+.shopping-list-container h1 {
+  font-size: 2rem; /* Reduced from 2.5rem */
+  margin-bottom: 15px;
+}
 .shopping-list-container p {
-  font-size: 1.2rem;
-  color: black;
+  font-size: 1rem; /* Reduced from 1.2rem */
   margin-bottom: 20px;
-  margin-top: 20px;
-  font-style: italic;
 }
 
 
 /* Shopping List elements */
 #shopping-list {
-  list-style: none;
-  margin: 20px 0;
+  margin: 20px auto;
   background: white;
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: inset 0px -1px 3px rgba(0, 0, 0, 0.1);
   text-align: left;
   padding-left: 20px; /* Ensures bullets are visible */
+  list-style-position: inside;
+}
+
+.shopping-list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.item-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.quantity-btn {
+  background: var(--orange-dark);
+  color: white;
+  border: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.remove-item {
+  background: var(--orange-dark);
+  color: white;
+  border: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.shopping-list-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+  justify-content: center;
+}
+
+.quantity {
+  min-width: 30px;
+  text-align: center;
 }
 
 #shopping-list li {
+  display: flex;
+  justify-content: space-between;
   background: var(--white);
-  border: 2px solid var(--green-dark);
+  border: none;
   padding: 15px 20px;
   border-radius: 10px;
   margin-bottom: 12px;
-  font-size: 1.2rem;
-  font-weight: 500;
-  display: flex; /* Fix alignment */
+  font-size: 1rem;
+  font-weight: bold;
   align-items: center; /* Center items properly */
   gap: 10px; /* Adds spacing */
   transition: all 0.3s ease-in-out;
-  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: inset -2px -2px rgba(0,0,0,0.05), inset -2px -2-px rgba(000
+,0,0,0.05);
   list-style-position: inside; /* Ensures text stays next to bullet */
+  margin-top: 20px;
 }
 
 #shopping-list li:nth-child(even) {
@@ -1333,13 +1428,13 @@ h3 {
 
 #clear-shopping-list,
 .btn-mealplanner {
-  background: var(--orange-medium);
+  background: var(--orange-dark);
   color: white;
-  padding: 12px 24px;
+  padding: 10px 15px;
   border: none;
   cursor: pointer;
   border-radius: 8px;
-  font-size: 1.2rem;
+  font-size: 0.9rem;
   font-weight: bold;
   transition: all 0.3s ease-in-out;
   box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.2);
@@ -1484,7 +1579,7 @@ h3 {
   right: -20px;
 }
 
-/* ==== Settings Page Styles ==== */
+/* ========================== Settings Page Styles ========================== */
 .settings-container {
   max-width: 1200px;
   margin: 50px auto;
@@ -1521,7 +1616,7 @@ h3 {
   border-radius: 12px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
   position: relative;
-  padding-bottom: 30px; /* Keep the padding for feedback */
+  padding-bottom: 30px;
   transition: all 0.2s ease;
 }
 
@@ -1530,20 +1625,18 @@ h3 {
   transform: translateY(-1px);
 }
 
-.preference-item label {
+.preference-label {
   font-size: 1.1rem;
   color: var(--text-dark);
   font-weight: 500;
 }
 
-/* Toggle Switch */
+/* Toggle switch styles */
 .toggle-switch {
   position: relative;
   display: inline-block;
   width: 50px;
   height: 25px;
-  margin-left: auto;
-  cursor: pointer;
 }
 
 .toggle-input {
@@ -1552,38 +1645,38 @@ h3 {
   height: 0;
 }
 
-.toggle-slider {
+.toggle-slider-label {
   position: absolute;
   cursor: pointer;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: #ccc;
-  border-radius: 25px;
-  transition: all 0.3s ease;
+  background-color: var(--orange-medium);
+  transition: .4s;
+  border-radius: 34px;
 }
 
-.toggle-slider::before {
-  content: '';
+.toggle-slider-label:before {
   position: absolute;
+  content: "";
   height: 21px;
   width: 21px;
   left: 2px;
   bottom: 2px;
-  background: white;
+  background-color: white;
+  transition: .4s;
   border-radius: 50%;
-  transition: transform 0.3s ease;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.toggle-input:checked + .toggle-slider {
-  background: var(--green-medium);
+.toggle-input:checked + .toggle-slider-label {
+  background-color: #007A33;
 }
 
-.toggle-input:checked + .toggle-slider::before {
+.toggle-input:checked + .toggle-slider-label:before {
   transform: translateX(25px);
 }
+
 
 /* Contact Us Section */
 .contact-section {
@@ -1694,6 +1787,9 @@ h3 {
   position: absolute;
   bottom: 5px;
   right: 20px;
+  color: var(--text-dark); /* Default color for light mode */
+  background-color: transparent; /* Make sure there's no background */
+
 }
 
 /* ============= Dark mode styles - Base =============== */
@@ -1725,9 +1821,13 @@ body.dark-mode .settings-container h3,
 body.dark-mode .settings-container p,
 body.dark-mode .settings-container label,
 body.dark-mode .preference-label,
+body.dark-mode .saved-meals-grid p,
 body.dark-mode .faq-item p,
 body.dark-mode .contact-section label,
 body.dark-mode .contact-section input,
+body.dark-mode .breadcrumb .back-link:hover,
+body.dark-mode .breadcrumb .back-link .arrow,
+body.dark-mode .breadcrumb .back-link,
 body.dark-mode .contact-section textarea {
   color: #ffffff !important;
 }
@@ -1755,6 +1855,13 @@ body.dark-mode .meal-info {
   color: #f0f0f0 !important;
 }
 
+body.dark-mode .saved-meals-grid .saved-meal-info h3,
+body.dark-mode .saved-meals-grid .saved-meal-info p {
+  color: #000000 !important; /* Black text for dark mode */
+}
+
+
+
 /* Buttons and interactive elements */
 body.dark-mode .btn-primary {
   background-color: #007A33 !important;
@@ -1768,52 +1875,25 @@ body.dark-mode .form-control {
   color: #ffffff !important;
 }
 
-/* Additional toggle switch styles */
-.toggle-switch {
-  position: relative;
-  display: inline-block;
-  width: 50px;
-  height: 25px;
-  cursor: pointer;
+body.dark-mode .toggle-slider-label {
+  background: var(--orange-dark); /* Brighter orange for better contrast */
 }
 
-.toggle-input {
-  opacity: 0;
-  width: 0;
-  height: 0;
+body.dark-mode .toggle-input:checked + .toggle-slider {
+  background: #9af08b; /* Lighter green for better visibility */
 }
 
-.toggle-slider {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  border-radius: 25px;
-  transition: all 0.3s ease;
+body.dark-mode .toggle-slider::before {
+  background: #FFF; /* White for contrast */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-.toggle-slider:before {
-  content: "";
-  position: absolute;
-  height: 21px;
-  width: 21px;
-  left: 2px;
-  bottom: 2px;
-  background-color: white;
-  border-radius: 50%;
-  transition: transform 0.3s ease;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.toggle-input:checked + .toggle-slider {
-  background-color: #007A33;
-}
-
-.toggle-input:checked + .toggle-slider:before {
+body.dark-mode .toggle-input:checked + .toggle-slider::before {
   transform: translateX(25px);
 }
+
+
+
 
 /* ==== Animations ==== */
 @keyframes spin {
@@ -1873,6 +1953,8 @@ body.dark-mode .form-control {
       grid-template-columns: 1fr;
   }
   
+
+  /*=========== Footer Mobile View ============*/
   .footer-grid {
     flex-direction: column;
     text-align: center;
@@ -1890,17 +1972,60 @@ body.dark-mode .form-control {
 }
 
 .footer-grid .column form {
+  display: flex;
   flex-direction: column;
-  gap: 1px;
+  align-items: center;
+  gap: 15px;  /* Increased spacing between input and button */
+  margin: 20px auto;  /* Center the form */
+  max-width: 300px;  /* Limit width on mobile */
 }
 
 .footer-grid input {
   width: 100%;
+  margin: 0;  /* Remove any existing margins */
+  text-align: center;  /* Center the placeholder text */
+  margin-top: 25px;
+  margin-bottom: 5px;
 }
 
+.footer-grid button {
+  width: 100%;
+  margin: 0;  /* Remove any existing margins */
+}
 
+.footer-grid .column p {
+  margin-top: 20px;  /* Adds space above the paragraph */
+  padding: 0 20px;   /* Adds some padding on the sides */
+  line-height: 1.6;  /* Better line height for readability */
+}
 
- /* Hide the menu by default */
+/* Target specifically the About Us column */
+.footer-grid .column:nth-child(2) p {
+  margin-top: 40px;  /* More specific targeting for the About Us paragraph */
+}
+
+.footer-grid .column:first-child ul {
+  margin-top: 30px;  /* Space between heading and links */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;  /* Space between each link */
+}
+
+.footer-grid .column:first-child li {
+  margin: 0;  /* Reset any existing margins */
+  padding: 5px 0;  /* Add some vertical padding */
+  width: 100%;  /* Full width for better touch targets */
+  text-align: center;
+}
+
+.footer-grid .column:first-child a {
+  display: block;  /* Makes entire area clickable */
+  padding: 8px 0;  /* Larger touch target */
+  font-size: 1.1rem;  /* Slightly larger font */
+}
+
+ /* ,MENU Hide the menu by default */
  .nav-menu {
   position: fixed;
   top: 0;
@@ -1955,8 +2080,6 @@ body.dark-mode .form-control {
   list-style: none;
 }
 
-
-
 .nav-menu ul li {
   margin: 15px 0;
 }
@@ -2007,8 +2130,6 @@ body.dark-mode .form-control {
   cursor: pointer;
   margin-bottom: 15px;
   z-index: 1100; /* Ensure it's above everything */
-
-
 }
 
 .recipe-search-hero {
@@ -2060,22 +2181,205 @@ body.dark-mode .form-control {
   align-items: center;
 }
 
-.meal-planner {
-  font-size: 0.9rem;
-}
+/* =========== MEAL PLANNER ================ */
+  /* Container Styles */
 
-.meal-planner th, .meal-planner td {
-  padding: 8px;
-}
+  .meal-planner thead {
+    display: none; /* Hide headers on mobile */
+  }
 
-.modal-content {
-  width: 90%;
-}
+  .meal-planner {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Flexible columns */
+    gap: 10px;
+    margin: 20px auto;
+    max-width: 100%; /* Allow the table to take full width */
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .meal-planner-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    max-width: 100%; /* Allow the container to take full width */
+    margin: 0 auto;
+  }
 
+  .meal-planner-container p {
+    font-size: 1.2rem;
+    color: var(--green-dark);
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .meal-planner-container h1 {
+    font-size: 2.5rem;
+    color: var(--green-dark);
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .meal-planner tr {
+    display: grid;
+    grid-template-columns: 1fr; /* Stack cells vertically */
+    gap: 10px; /* Add spacing between cells */
+    margin-bottom: 15px; /* Add spacing between rows */
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow for better separation */
+    padding: 10px;
+  }
+
+  /* Row Styles */
+  .meal-planner tr:nth-child(even) {
+    background: rgba(88, 185, 71, 0.1); /* Light green for even rows */
+  }
+
+  .meal-planner tr:nth-child(odd) {
+    background: rgba(255, 255, 255, 0.8); /* White for odd rows */
+  }
+
+  /* Hover Effect */
+
+  .meal-planner tr {
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+
+  .meal-planner tr:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  }
+
+  /* Cell Styles */
+  .meal-planner td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    font-size: 14px; /* Adjust font size for readability on small screens */
+    border-bottom: none; /* Remove borders for cleaner look */
+    background: transparent;
+  }
+
+  .meal-planner td:hover {
+    background: rgba(88, 185, 71, 0.1); /* Light green on hover */
+    color: var(--green-dark);
+    transition: all 0.3s ease;
+  }
+
+  /* Add labels for each cell */
+  .meal-planner td::before {
+    content: attr(data-label); /* Add labels for each cell */
+    font-weight: bold;
+    color: var(--green-dark);
+    margin-right: auto;
+    padding-right: 10px;
+    flex-shrink: 0;
+  }
+  .meal-slot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+  }
+
+  .meal-slot:hover {
+    background: rgba(88, 185, 71, 0.2);
+    color: var(--green-dark);
+    transform: translateY(-2px);
+  }
+  
+  /* Day cell specific styling */
+  .meal-planner td:first-child {
+    background: var(--green-dark);
+    color: white;
+    border-radius: 12px 12px 0 0;
+  }
+
+  .meal-planner td:first-child::before {
+    color: white;
+  }
+
+  /* Calories cell specific styling */
+  .meal-planner td:last-child {
+    background: rgba(88, 185, 71, 0.1);
+    border-radius: 0 0 12px 12px;
+    font-weight: 600;
+  }
+
+  /* Button Styling */
+  .meal-planner-container .btn-mealplanner {
+    width: calc(100% - 30px);
+    margin: 10px 15px;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+    background: var(--orange-dark);
+    color: white;
+    transition: all 0.3s ease;
+  }
+
+  .meal-planner-container .btn-mealplanner:hover {
+    background: var(--orange-medium);
+    transform: translateY(-2px);
+  }
+
+
+/* Saved Meals Section */
 .saved-meals-grid {
-  grid-template-columns: 1fr; /* Single column on mobile */
+  grid-template-columns: 1fr;
+  gap: 15px;
+  padding: 10px;
 }
 
+.saved-meals-title {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.saved-meal-card {
+  margin: 5px 0;
+}
+
+.saved-meal-info h3 {
+  font-size: 16px;
+}
+
+.saved-meal-actions {
+  flex-direction: column;
+  gap: 8px;
+}
+
+.btn-add-meal,
+.btn-remove-meal {
+  width: 100%;
+  padding: 10px;
+  margin: 3px 0;
+  border-radius: 6px;
+}
+
+/* Empty State Messaging */
+.meal-planner:empty::after {
+  content: 'No meals planned yet';
+  display: block;
+  text-align: center;
+  padding: 20px;
+  color: #666;
+  font-style: italic;
+}
+
+
+ /* ======== Shopping List  Section ========= */
 .shopping-list-container {
   width: 90%;
   padding: 20px;
@@ -2137,9 +2441,6 @@ body.dark-mode .form-control {
   right: -10px;
 }
 
-/* Settings Page */
-
-
 
 }
 
@@ -2150,6 +2451,112 @@ body.dark-mode .form-control {
   .close-menu {
       display: none !important;
   }
+
+  .saved-meals-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .meal-planner th,
+  .meal-planner td {
+    padding: 10px 6px;
+  }
 }
 
 
+@media (max-width: 1024px) {
+  .saved-meals-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media print {
+  /* Ensures text wrapping in PDF */
+  * {
+      white-space: normal !important;
+      overflow-wrap: break-word !important;
+      word-wrap: break-word !important;
+  }
+
+  /* Container styles for PDF */
+  .shopping-list-container {
+      width: 100% !important;
+      max-width: 100% !important;
+      margin: 20px !important;
+      padding: 0 !important;
+  }
+
+  /* Text styles for PDF */
+  .shopping-list-container p,
+  .shopping-list-container div {
+      line-height: 1.5 !important;
+      margin-bottom: 10px !important;
+      font-size: 12pt !important;  /* Standard print font size */
+      max-width: 100% !important;
+  }
+
+  /* Ensure page breaks don't split items */
+  .shopping-list-item {
+      page-break-inside: avoid;
+  }
+}
+
+
+/* Ensure buttons are stacked vertically on smaller screens */
+@media (max-width: 480px) {
+  .meal-selection-modal button {
+      width: calc(100% - 20px); /* Full width for buttons on small screens */
+      margin-bottom: 10px; /* Add spacing between buttons */
+  }
+
+  .meal-planner-container .btn-mealplanner {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .saved-meals-grid {
+    grid-template-columns: 1fr;
+    padding: 10px;
+  }
+
+  .meal-selection-modal .modal-content {
+    width: 95%;
+    padding: 20px;
+  }
+
+  .meal-selection-modal button {
+    width: 100%;
+    margin: 5px 0;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .shopping-list-container {
+    width: 95%; /* Further reduces container width on very small screens */
+    padding: 15px;
+  }
+
+  .shopping-list-container h1 {
+    font-size: 1.8rem;
+  }
+
+  .btn-mealplanner {
+    flex: 1 1 100%; /* Makes buttons full width on very small screens */
+    max-width: none;
+  }
+
+  .quantity-btn, .remove-item {
+    width: 20px; /* Smaller width */
+    height: 20px; /* Smaller height */
+    font-size: 0.8rem; /* Smaller font size */
+    padding: 5px; /* Adjust padding */
+    display: flex;
+    justify-content: center;
+  }
+
+  .item-controls {
+    gap: 7px; /* Adjust spacing between buttons */
+}
+
+  
+}

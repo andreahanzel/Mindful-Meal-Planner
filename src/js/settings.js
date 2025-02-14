@@ -76,17 +76,9 @@ export function initializeSettingsToggle() {
 
       console.warn(`Toggle changed: ${settingId} = ${isEnabled}`);
     });
-
-    // Make the label clickable
-    const label = document.querySelector(`label[for="${toggle.id}"]`);
-    if (label) {
-      label.addEventListener('click', () => {
-        toggle.checked = !toggle.checked;
-        toggle.dispatchEvent(new Event('change')); // Use Event instead of CustomEvent
-      });
-    }
   });
 }
+
 
 // | New: Added function to apply setting changes
 function applySettingChange(settingId, isEnabled) {
@@ -99,13 +91,17 @@ function applySettingChange(settingId, isEnabled) {
       document.documentElement.classList.toggle('dark-mode', isEnabled);
       localStorage.setItem('dark-mode', isEnabled);
       break;
-
+    case 'high-contrast':
+      // Apply high contrast mode
+      document.body.classList.toggle('high-contrast', isEnabled);
+      localStorage.setItem('high-contrast', isEnabled);
+      break;
     case 'notifications':
       if (isEnabled && 'Notification' in window) {
         // Request notification permissions
-        Notification.requestPermission().then(function(permission) {
+        Notification.requestPermission().then(function (permission) {
           if (permission === 'granted') {
-            new Notification('Notifications Enabled', { // Fixed: Corrected the Notification call
+            new Notification('Notifications Enabled', {
               body: 'You will now receive updates about recipes and meal plans',
               icon: '/images/favicon.png'
             });
@@ -130,7 +126,7 @@ function applySettingChange(settingId, isEnabled) {
         const userEmail = localStorage.getItem('userEmail');
         if (!userEmail) {
           // If no email is stored, prompt user
-          const email = prompt('Please enter your email address for updates:'); // Fixed: Corrected the prompt call
+          const email = prompt('Please enter your email address for updates:');
           if (email) {
             localStorage.setItem('userEmail', email);
             console.warn('Email updates enabled for:', email);
@@ -178,8 +174,7 @@ function applySettingChange(settingId, isEnabled) {
 function startAutoSave() {
   const interval = localStorage.getItem('auto-save-interval');
   if (interval) {
-    window.autoSaveInterval = setInterval(() => { // Fixed: Corrected the setInterval call
-
+    window.autoSaveInterval = setInterval(() => {
       const recipeData = collectRecipeData(); // You'll need to implement this
       if (recipeData) {
         localStorage.setItem('recipe-auto-save', JSON.stringify(recipeData));
@@ -192,7 +187,7 @@ function startAutoSave() {
 // New function to stop auto-save
 function stopAutoSave() {
   if (window.autoSaveInterval) {
-    clearInterval(window.autoSaveInterval); // Fixed: Corrected the clearInterval call
+    clearInterval(window.autoSaveInterval);
     window.autoSaveInterval = null;
     console.warn('Auto-save disabled');
   }
@@ -207,6 +202,7 @@ function collectRecipeData() {
     ingredients: ['Ingredient 1', 'Ingredient 2']
   };
 }
+
 // New function to show feedback message
 function showFeedbackMessage(settingId, isEnabled) {
   const toggle = document.getElementById(settingId);
@@ -231,12 +227,19 @@ function showFeedbackMessage(settingId, isEnabled) {
   }
 
   const settingName = settingId.replace('-', ' ');
-  feedbackEl.textContent = `${settingName} has been ${isEnabled ? 'enabled' : 'disabled'}`;
-  feedbackEl.style.color = isEnabled ? '#007A33' : '#C74A00';
+feedbackEl.textContent = `${settingName} has been ${isEnabled ? 'enabled' : 'disabled'}`;
 
-  feedbackEl.style.opacity = '1';
+// Check if dark mode is active
+const isDarkMode = document.body.classList.contains('dark-mode');
 
-  window.setTimeout(() => {
-    feedbackEl.style.opacity = '0';
-  }, 2000);
+// Set feedback message color based on the current mode
+feedbackEl.style.color = isDarkMode ? '#FFFFFF' : '#000000'; // White in dark mode, black in light mode
+
+feedbackEl.style.opacity = '1';
+
+window.setTimeout(() => {
+  feedbackEl.style.opacity = '0';
+}, 2000);
+
+  
 }

@@ -12,14 +12,18 @@
     <header id="header"></header>
 
     <main class="shopping-list-container">
-        <h1>Shopping List</h1>
-        <p>Here are the ingredients you'll need to prepare your selected meals.</p>
-
-        <ul id="shopping-list"></ul>
-
+      <h1>Shopping List</h1>
+      <p>Here are the ingredients you'll need to prepare your selected meals.</p>
+  
+      <ul id="shopping-list"></ul>
+  
+      <div class="shopping-list-actions">
         <button id="clear-shopping-list" class="btn-mealplanner">Clear Shopping List</button>
+        <button id="email-shopping-list" class="btn-mealplanner">Email List</button>
+        <button id="download-pdf" class="btn-mealplanner">Download PDF</button>
         <button onclick="window.location.href='/app-pages/meal-planner.html'" class="btn-mealplanner">Back to Meal Planner</button>
-    </main>
+    </div>
+  </main>
 
     <!-- FOOTER -->
     <footer id="footer"></footer>
@@ -33,5 +37,7 @@
             initializeShoppingList();
         });
     </script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </body>
 </html>
