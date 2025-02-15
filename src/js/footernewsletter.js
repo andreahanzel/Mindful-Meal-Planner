@@ -1,4 +1,4 @@
-// src/js/footerNewsletter.js
+
 export function initializeFooterNewsletter() {
   const footerForm = document.getElementById("footer-newsletter-form");
   const footerEmailInput = document.getElementById("footer-newsletter-email");

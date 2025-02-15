@@ -18,6 +18,9 @@
         <div>
           <div>
             <h1>User Preferences / Settings</h1>
+            <h2 id="welcome-message">Welcome</h2>
+
+
 
         <!-- User Preferences Section -->
 
@@ -120,12 +123,17 @@
     <script type="module">
       import { loadPartials } from '/js/utils.js';
       import { initializeSettingsToggle } from '/js/settings.js';
+      import { checkAuthState } from '/js/auth.js';
       
-      // Wait for both DOM and partials to load before initializing settings
-          document.addEventListener('DOMContentLoaded', () => {
-        loadPartials();
-        initializeSettingsToggle();
-    });
-  </script>
+      // Check authentication immediately
+      if (!checkAuthState()) {
+        window.location.href = '/app-pages/login.html';
+      } else {
+        document.addEventListener('DOMContentLoaded', () => {
+          loadPartials();
+          initializeSettingsToggle();
+        });
+      }
+    </script>
 </body>
 </html>
