@@ -1,4 +1,3 @@
-// settings.js
 import { loadPartials } from '/js/utils.js';
 import { checkAuthState } from '/js/auth.js';
 
@@ -15,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initializeContactForm();
 });
 
+// Initialize the welcome message
 function initializeWelcomeMessage() {
   if (!checkAuthState()) {
     window.location.href = '/app-pages/login.html';
@@ -27,7 +27,7 @@ function initializeWelcomeMessage() {
     welcomeMessage.textContent = `Welcome, ${user.name || 'User'}!`;
   }
 }
-
+// Initialize the contact form
 function initializeContactForm() {
   if (!checkAuthState()) {
     window.location.href = '/app-pages/login.html';
@@ -59,7 +59,7 @@ function initializeContactForm() {
     });
   }
 }
-
+// Initialize the settings toggle
 export function initializeSettingsToggle() {
   if (!checkAuthState()) {
     window.location.href = '/app-pages/login.html';
@@ -115,7 +115,7 @@ export function initializeSettingsToggle() {
   });
 }
 
-// settings.js
+// Function to apply setting changes
 function applySettingChange(settingId, isEnabled) {
   console.warn(`Applying setting change: ${settingId} = ${isEnabled}`);
 
@@ -195,7 +195,7 @@ case 'notifications':
       console.warn(`Unknown setting: ${settingId}`);
   }
 }
-
+// Function to start auto-saving
 function startAutoSave() {
   const interval = localStorage.getItem('auto-save-interval');
   if (interval) {
@@ -208,7 +208,7 @@ function startAutoSave() {
     }, parseInt(interval));
   }
 }
-
+// Function to stop auto-saving
 function stopAutoSave() {
   if (window.autoSaveInterval) {
     clearInterval(window.autoSaveInterval);
@@ -216,7 +216,7 @@ function stopAutoSave() {
     console.warn('Auto-save disabled');
   }
 }
-
+// Function to collect recipe data (placeholder)
 function collectRecipeData() {
   console.warn('collectRecipeData() needs to be implemented!');
   return {
@@ -224,7 +224,7 @@ function collectRecipeData() {
     ingredients: ['Ingredient 1', 'Ingredient 2']
   };
 }
-
+// Function to show feedback message
 function showFeedbackMessage(settingId, isEnabled) {
   const toggle = document.getElementById(settingId);
   if (!toggle) {

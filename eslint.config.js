@@ -1,7 +1,7 @@
 import eslint from "@eslint/js";
 import eslintConfigPrettier from "eslint-config-prettier";
 import importsPlugin from "eslint-plugin-import";
-// eslint.config.js
+
 export default [
   eslint.configs.recommended,
   // Browser files configuration
@@ -25,11 +25,11 @@ export default [
         URLSearchParams: true,
         MutationObserver: true,
         CustomEvent: true,
-        Notification: true,  // Add Notification HERE
-        prompt: true,        // Add prompt HERE
-        setInterval: true,   // Add setInterval HERE
-        clearInterval: true, // Add clearInterval HERE
-        Event: true // Add Event HERE
+        Notification: true,  
+        prompt: true,       
+        setInterval: true,   
+        clearInterval: true, 
+        Event: true 
 
       },
     },

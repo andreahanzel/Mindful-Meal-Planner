@@ -1,10 +1,9 @@
-// utils.js
 import { initializeMenu } from './menu.js';
 import { initializeFooterNewsletter } from './footernewsletter.js';
 import { updateHeader } from './auth.js'; 
 
 
-// Added dark mode check function to apply across all pages
+// Dark mode check function to apply across all pages
 export function checkDarkMode() {
   const isDarkMode = localStorage.getItem('dark-mode') === 'true';
   if (isDarkMode) {
@@ -17,7 +16,7 @@ export function checkDarkMode() {
 }
 
 
-// | Added function to show feedback message
+// Function to show feedback message
 export async function loadPartials() {
   try {
     checkDarkMode();

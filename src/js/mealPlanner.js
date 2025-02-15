@@ -106,7 +106,7 @@ export function initializeMealPlanner() {
       localStorage.setItem('savedRecipes', JSON.stringify(savedRecipes));
       renderSavedRecipes();
   }
-
+// Function to render the meal plan
   function renderMealPlan() {
     mealPlanBody.innerHTML = '';
     days.forEach(day => {
@@ -145,7 +145,7 @@ export function initializeMealPlanner() {
         slot.addEventListener('click', handleMealSlotClick);
     });
   }
-
+// Function to open the meal selection modal
   function openMealSelection(event) {
       const recipe = JSON.parse(event.target.dataset.recipe);
 
@@ -178,7 +178,7 @@ export function initializeMealPlanner() {
       document.getElementById('confirm-add-meal').addEventListener('click', () => addMealToPlanner(recipe, modal));
       document.getElementById('cancel-add-meal').addEventListener('click', () => modal.remove());
   }
-
+// Function to add meal to planner
   function addMealToPlanner(recipe, modal) {
     const selectedDay = document.getElementById('day-select').value;
     const mealType = document.getElementById('meal-type-select').value;
@@ -195,13 +195,13 @@ export function initializeMealPlanner() {
     modal.remove();
     renderMealPlan();
   }
-
+// Function to clear the meal plan
   function clearMealPlan() {
       localStorage.removeItem('mealPlan');
       mealPlan = {};
       renderMealPlan();
   }
-
+// Function to handle meal slot click
   function handleMealSlotClick(event) {
     const slotElement = event.target.closest('.meal-slot');
     if (!slotElement) return;
@@ -246,7 +246,7 @@ export function initializeMealPlanner() {
 
     modal.querySelector('#cancel').addEventListener('click', () => modal.remove());
   }
-
+// Function to open meal selection for changing an existing meal
   function openMealSelectionForChange(day, mealType) {
     const modal = document.createElement('div');
     modal.classList.add('meal-selection-modal');

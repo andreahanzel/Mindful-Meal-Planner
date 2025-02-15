@@ -1,4 +1,3 @@
-// api.js
 const EDAMAM_APP_ID = import.meta.env.VITE_EDAMAM_APP_ID;
 const EDAMAM_API_KEY = import.meta.env.VITE_EDAMAM_API_KEY;
 const SPOONACULAR_API_KEY = import.meta.env.VITE_SPOONACULAR_API_KEY;
@@ -182,7 +181,7 @@ export async function getSimilarRecipes(recipeName) {
           return [];
       }
 
-      // 🔹 Step 2: Get Similar Recipes
+      // Get Similar Recipes
       const response = await fetch(
           `https://api.spoonacular.com/recipes/${recipeId}/similar?number=3&apiKey=${SPOONACULAR_API_KEY}`
       );
@@ -195,7 +194,7 @@ export async function getSimilarRecipes(recipeName) {
           return [];
       }
 
-      // 🔹 Step 3: Fetch images & calories for each similar recipe
+      // Fetch images & calories for each similar recipe
       const recipesWithDetails = await Promise.all(similarRecipes.map(async (recipe) => {
           const detailsResponse = await fetch(
               `https://api.spoonacular.com/recipes/${recipe.id}/information?includeNutrition=true&apiKey=${SPOONACULAR_API_KEY}`

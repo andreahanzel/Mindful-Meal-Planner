@@ -75,7 +75,7 @@ function setupFormSwitching(signUpButton, signInButton, container, signInContain
       });
   }
 }
-
+// This function resets the form state by clearing error messages and hiding the password requirements
 function resetFormState() {
   const passwordRequirements = document.getElementById('password-requirements');
   const errorMessages = document.querySelectorAll('.error-message');
@@ -86,7 +86,7 @@ function resetFormState() {
   
   errorMessages.forEach(msg => msg.textContent = '');
 }
-
+// This function sets up the password toggle functionality
 function setupPasswordToggles() {
   document.querySelectorAll('.password-toggle').forEach(button => {
       button.addEventListener('click', (e) => {
@@ -103,7 +103,7 @@ function setupPasswordToggles() {
       });
   });
 }
-
+// This function sets up the password validation functionality
 function setupPasswordValidation() {
   const signupPassword = document.getElementById('signup-password');
   const passwordRequirements = document.getElementById('password-requirements');
@@ -124,7 +124,7 @@ function setupPasswordValidation() {
       });
   }
 }
-
+// This function updates the password requirements based on the input value
 function updatePasswordRequirements(password) {
   const validation = validatePassword(password);
   document.getElementById('length-check').className = validation.checks.length ? 'valid' : 'invalid';
@@ -132,7 +132,7 @@ function updatePasswordRequirements(password) {
   document.getElementById('number-check').className = validation.checks.number ? 'valid' : 'invalid';
   document.getElementById('special-check').className = validation.checks.special ? 'valid' : 'invalid';
 }
-
+//  This function validates the password based on the defined regex patterns
 function validatePassword(password) {
   const checks = {
       length: PASSWORD_REGEX.length.test(password),
@@ -147,7 +147,7 @@ function validatePassword(password) {
   };
 }
 
-
+// This function updates the header based on the user's authentication state
 export function updateHeader() {
   console.warn("Updating header...");
   const user = JSON.parse(localStorage.getItem('user'));
@@ -204,7 +204,7 @@ async function handleLogin(e) {
       errorMessage.textContent = 'An error occurred during login';
   }
 }
-
+// This function handles the signup process
 async function handleSignup(e) {
   e.preventDefault();
   const errorMessage = document.getElementById('signup-error-message');
@@ -236,7 +236,7 @@ async function handleSignup(e) {
   }
 }
 
-
+// This function handles the successful login process
 function loginSuccess(user) {
   console.warn("Login success, setting user data");
 
@@ -267,7 +267,6 @@ function loginSuccess(user) {
 }
 
 // Function to handle logout
-// auth.js
 export function handleLogout() {
   console.warn("Handling logout...");
   const user = JSON.parse(localStorage.getItem('user'));

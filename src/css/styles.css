@@ -591,14 +591,11 @@ h3 {
 }
 
 .footer p {
-  color: #ffffff;                      /* White text */
-  text-align: center;                   /* Centered text */
-  padding: 15px 0;                      /* Add space */
-  background: linear-gradient(to right, #009944, #95D600); /* Gradient background */
-  border-top: 2px solid #D05E14; /* Top border */
-  letter-spacing: 1px;                  /* Stylish spacing */
+  background: linear-gradient(to right, #009944, #95D600); 
+  border-top: 2px solid #D05E14; 
+  letter-spacing: 1px;                  
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3); /* Slight shadow effect */
-  width: 100%;                     /* Full width */
+  width: 100%;                   
   border-radius: 10px; /* Rounded corners */
 }
 
@@ -667,11 +664,9 @@ h3 {
 
 /* Recipe search missing label fix and dark mode */
 .main-search-input {
-  /* Add label for accessibility */
   position: relative;
 }
 
-/* Add this CSS for screen reader only label */
 .sr-only {
   position: absolute;
   width: 1px;
@@ -849,7 +844,7 @@ h3 {
 
 .recipe-sidebar {
   position: sticky;
-  top: 120px; /* Adjust based on header height */
+  top: 120px; 
   height: fit-content;
   align-self: start;
 }
@@ -861,8 +856,8 @@ h3 {
 
 .recipe-image-container img {
   width: 100%;
-  height: auto; /* Maintain aspect ratio */
-  object-fit: contain; /* Ensures the full image is visible */
+  height: auto; 
+  object-fit: contain; 
   border-radius: 15px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   display: grid;
@@ -1035,7 +1030,7 @@ h3 {
 
 .similar-recipe-info {
   display: grid;
-  grid-template-rows: auto auto auto; /* First row: h3, Second: recipe-meta, Third: button */
+  grid-template-rows: auto auto auto; 
   align-items: center;
   justify-items: center;
   padding: 15px;
@@ -1161,7 +1156,7 @@ h3 {
   text-align: center;
   font-size: 14px;
   word-wrap: break-word;
-  max-width: 100%; /* or set to 100% */
+  max-width: 100%; 
 }
 
 .meal-planner th {
@@ -1284,7 +1279,7 @@ h3 {
 }
 
 .meal-selection-modal h2 {
-  font-size: 1.5rem; /* Adjusted for better readability on mobile */
+  font-size: 1.5rem; 
   margin-bottom: 15px;
 }
 
@@ -1448,7 +1443,7 @@ h3 {
 /* Grid layout for saved recipes */
 .saved-meals-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Adjusts dynamically */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
   gap: 20px;
   justify-content: center;
 }
@@ -1528,7 +1523,7 @@ h3 {
 
 .shopping-list-container {
   max-width: 900px;
-  width: 95%; /* Changed from fixed width */
+  width: 95%; 
   margin: 40px auto;
   padding: 30px;
   background: linear-gradient(135deg, var(--green-light) 0%, var(--green-medium) 100%);
@@ -1547,11 +1542,11 @@ h3 {
 }
 
 .shopping-list-container h1 {
-  font-size: 2rem; /* Reduced from 2.5rem */
+  font-size: 2rem; 
   margin-bottom: 15px;
 }
 .shopping-list-container p {
-  font-size: 1rem; /* Reduced from 1.2rem */
+  font-size: 1rem; 
   margin-bottom: 20px;
 }
 
@@ -1564,7 +1559,7 @@ h3 {
   padding: 30px;
   box-shadow: inset 0px -1px 3px rgba(0, 0, 0, 0.1);
   text-align: left;
-  padding-left: 20px; /* Ensures bullets are visible */
+  padding-left: 20px; 
   list-style-position: inside;
 }
 
@@ -1633,7 +1628,7 @@ h3 {
   font-size: 1rem;
   font-weight: bold;
   align-items: center; /* Center items properly */
-  gap: 10px; /* Adds spacing */
+  gap: 10px; 
   transition: all 0.3s ease-in-out;
   box-shadow: inset -2px -2px rgba(0,0,0,0.05), inset -2px -2-px rgba(000
 ,0,0,0.05);
@@ -1937,7 +1932,7 @@ h3 {
 
 /* Contact Us Section */
 .contact-section {
-  margin-top: 80px; /* Increased margin-top */
+  margin-top: 80px; 
   margin-bottom: 40px;
   padding: 30px;
   background: rgba(255, 255, 255, 0.05);
@@ -2166,7 +2161,7 @@ body.dark-mode .recipe-search-hero {
 body.dark-mode .main-search-input {
   background-color: #333333; /* Dark gray background */
   color: #ffffff; /* White text inside the input */
-  border-color: #555555; /* Slightly lighter gray border */
+  border-color: #555555; 
 }
 
 
@@ -2354,8 +2349,6 @@ body.dark-mode .filter-container label {
 }
 
 
-
-
 /* Forgot Password */
 .forgot-password {
   color: var(--green-dark);
@@ -2485,7 +2478,7 @@ button.ghost {
   cursor: pointer;
 }
 
-/* ✅ Hide logout button by default */
+/* Hide logout button by default */
 .btn-logout {
   display: none;
   background-color: var(--orange-dark);
@@ -2522,7 +2515,7 @@ button.ghost {
   align-items: center;
   gap: 10px;
   height: 100%;
-  padding-bottom: 15px; /* Add slight padding to move it up */
+  padding-bottom: 15px; 
 }
 
 #user-greeting {
@@ -2575,19 +2568,19 @@ button.ghost {
     min-height: 20px;
 }
 
-/* ✓ Completely revised password requirements styling */
+/*Password requirements styling */
 .password-requirements {
   font-size: 0.65rem;
   color: #666;
   display: none;
-  position: relative; /* ✓ Changed to relative */
-  margin-top: -20px; /* ✓ Space below password input */
+  position: relative; 
+  margin-top: -20px; 
   margin-bottom: -20px;
   background: #f8f8f8;
   padding: 8px 12px; 
   border-radius: 8px;
   border: 1px solid #e0e0e0;
-  width: 100%; /* ✓ Full width */
+  width: 100%; 
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
@@ -2684,10 +2677,10 @@ button.ghost {
 
   .buttons {
     display: flex;
-    flex-direction: row; /* Align buttons next to each other */
+    flex-direction: row; 
     justify-content: center;
-    gap: 15px; /* Adds space between buttons */
-    margin-bottom: 20px; /* Creates gap between buttons & image */
+    gap: 15px; 
+    margin-bottom: 20px; 
 }
 
 .btn-primary, .btn-secondary {
@@ -2725,7 +2718,7 @@ button.ghost {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 15px;  /* Increased spacing between input and button */
+  gap: 15px;  
   margin: 20px auto;  /* Center the form */
   max-width: 300px;  /* Limit width on mobile */
   padding: 0 15px;
@@ -2752,21 +2745,21 @@ button.ghost {
 
 /* Target specifically the About Us column */
 .footer-grid .column:nth-child(2) p {
-  margin-top: 40px;  /* More specific targeting for the About Us paragraph */
+  margin-top: 40px; 
 }
 
 .footer-grid .column:first-child ul {
-  margin-top: 30px;  /* Space between heading and links */
+  margin-top: 30px;  
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2px;  /* Space between each link */
+  gap: 2px;  
 }
 
 .footer-grid .column:first-child li {
   margin: 0;  /* Reset any existing margins */
   padding: 5px 0;  /* Add some vertical padding */
-  width: 100%;  /* Full width for better touch targets */
+  width: 100%;  
   text-align: center;
 }
 
@@ -2808,7 +2801,6 @@ button.ghost {
   margin-top: 10px;
   width: auto; /* Ensures it doesn’t shrink */
 }
-
 
 .logo {
   display: none; /* Hide logo on mobile */
@@ -2859,7 +2851,7 @@ button.ghost {
 
 /* Menu Toggle Button */
 .menu-toggle {
-  position: fixed; /* Change to fixed */
+  position: fixed; 
   right: 15px; /* Moves toggle to the left */
   top: 15px;
   font-size: 2rem;
@@ -2942,8 +2934,6 @@ button.ghost {
 }
 
 /* =========== MEAL PLANNER ================ */
-  /* Container Styles */
-
   .meal-planner thead {
     display: none; /* Hide headers on mobile */
   }
@@ -3094,7 +3084,6 @@ button.ghost {
     transform: translateY(-2px);
   }
 
-
 /* Saved Meals Section */
 .saved-meals-grid {
   grid-template-columns: 1fr;
@@ -3137,7 +3126,6 @@ button.ghost {
   color: #666;
   font-style: italic;
 }
-
 
  /* ======== Shopping List  Section ========= */
 .shopping-list-container {
@@ -3365,7 +3353,6 @@ button.ghost {
 }
 
 
-
 /* Hide close button in desktop view */
 @media (min-width: 769px) {
   .close-menu {
@@ -3537,8 +3524,6 @@ button.ghost {
   .item-controls {
     gap: 7px; /* Adjust spacing between buttons */
 }
-
-  
 }
 
 

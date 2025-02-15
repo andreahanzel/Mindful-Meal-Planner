@@ -19,7 +19,7 @@ function displayRecipeDetails() {
   displayNutritionInfo(recipe);
   loadSimilarRecipes(recipe.label);
 }
-
+// If no recipe ID is found, show an error message
 async function loadSimilarRecipes(recipeName) {
   try {
       const recipes = await getSimilarRecipes(recipeName);
@@ -48,9 +48,9 @@ function displaySimilarRecipes(recipes) {
                   <span>${recipe.readyInMinutes || 'N/A'} mins</span>
               </div>
               <a href="${recipe.sourceUrl}" 
-                 target="_blank" 
-                 rel="noopener noreferrer" 
-                 class="btn-secondary">
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="btn-secondary">
                   View Recipe
               </a>
           </div>
@@ -59,7 +59,7 @@ function displaySimilarRecipes(recipes) {
 
   container.innerHTML = recipesHTML;
 }
-
+// Update the recipe header with title, calories, time, and servings
 function updateRecipeHeader(recipe) {
   document.getElementById('recipe-title').textContent = recipe.label;
   document.getElementById('recipe-calories').textContent = 
@@ -84,7 +84,7 @@ function displayIngredients(recipe) {
       ingredientsList.appendChild(li);
   });
 }
-
+// Display instructions or a link to the original recipe
 function displayInstructions(recipe) {
   const instructionsList = document.getElementById('instructions-list');
   
@@ -108,7 +108,7 @@ function displayInstructions(recipe) {
       instructionsList.innerHTML = '<p>Instructions not available for this recipe.</p>';
   }
 }
-
+// Display nutrition information with a progress bar
 function displayNutritionInfo(recipe) {
   const nutritionInfo = document.getElementById('nutrition-info');
   const nutrients = recipe.totalNutrients;
@@ -133,12 +133,12 @@ function displayNutritionInfo(recipe) {
   
   nutritionInfo.innerHTML = nutritionHTML;
 }
-
+// Set up event listeners for the save button
 function setupEventListeners() {
   const saveButton = document.getElementById('save-recipe');
   saveButton.addEventListener('click', handleSaveRecipe);
 }
-
+// Save the recipe to localStorage
 function handleSaveRecipe() {
   const recipe = JSON.parse(localStorage.getItem('selectedRecipe'));
   let savedRecipes = JSON.parse(localStorage.getItem('savedRecipes')) || [];

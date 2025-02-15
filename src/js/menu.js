@@ -1,4 +1,3 @@
-// menu.js
 export function initializeMenu() {
   const menuToggle = document.querySelector(".menu-toggle");
   const closeMenu = document.querySelector(".close-menu");

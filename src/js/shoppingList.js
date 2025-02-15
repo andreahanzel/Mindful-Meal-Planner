@@ -6,6 +6,7 @@ export function initializeShoppingList() {
 
   let shoppingList = JSON.parse(localStorage.getItem('shoppingList')) || {};
 
+  // Function to add an ingredient to the shopping list
   function renderShoppingList() {
     shoppingListContainer.innerHTML = '';
 
@@ -57,13 +58,13 @@ export function initializeShoppingList() {
       shoppingListContainer.appendChild(li);
     });
   }
-
+// Function to clear the shopping list
   function clearShoppingList() {
     localStorage.removeItem('shoppingList');
     shoppingList = {};
     renderShoppingList();
   }
-
+// Function to create and download the PDF
   function createAndDownloadPDF() {
     const { jsPDF } = window.jspdf;
     const doc = new jsPDF();
@@ -110,12 +111,12 @@ export function initializeShoppingList() {
 
     return doc;
 }
-
+// Function to download the PDF
   function downloadPDF() {
     const doc = createAndDownloadPDF();
     doc.save('shopping-list.pdf');
   }
-
+// Function to email the shopping list
   function emailShoppingList() {
     let emailContent = 'Shopping List:\n\n';
     Object.entries(shoppingList).forEach(([ingredient, quantity]) => {
