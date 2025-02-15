@@ -1,3 +1,4 @@
+// This script handles the scrolling functionality for the testimonials section.
 document.addEventListener("DOMContentLoaded", () => {
   const container = document.querySelector(".testimonial-scroll");
   const testimonials = document.querySelectorAll(".testimonial-content");
@@ -6,11 +7,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let index = 0;
 
+// Set the initial position of the testimonials
   function updateTestimonials() {
-      const offset = -index * 100; // Move by 100% per slide
+      const offset = -index * 100; 
       container.style.transform = `translateX(${offset}%)`;
   }
 
+  // Initialize the testimonials position
   function scrollTestimonials(direction) {
       if (direction === 1 && index < testimonials.length - 1) {
           index++;
