@@ -10,12 +10,10 @@
     <link rel="icon" type="image/png" href="/images/favicon.png">
 </head>
 <body>
-    <!-- HEADER -->
     <header id="header"></header>
 
     <main class="auth-container">
         <div class="auth-forms">
-
             <!-- Sign In Form -->
             <div class="form-container sign-in-container">
                 <form id="login-form">
@@ -26,7 +24,13 @@
                     </div>
                     <div class="form-group">
                         <label for="login-password">Password</label>
-                        <input type="password" id="login-password" name="password" placeholder="Enter your password" required>
+                        <div class="password-input-wrapper">
+                            <input type="password" id="login-password" name="password" placeholder="Enter your password" required>
+                            <button type="button" class="password-toggle" aria-label="Toggle password visibility">
+                                <i class="eye-icon">👁️</i>
+                            </button>
+                        </div>
+                        <div id="login-error-message" class="error-message"></div>
                     </div>
                     <button type="submit">Sign In</button>
                 </form>
@@ -36,8 +40,6 @@
             <div class="form-container sign-up-container">
                 <form id="signup-form">
                     <h1>Create Account</h1>
-                    <div class="social-buttons">
-                    </div>
                     <div class="form-group">
                         <label for="signup-name">Name</label>
                         <input type="text" id="signup-name" name="name" placeholder="Enter your name" required>
@@ -48,7 +50,22 @@
                     </div>
                     <div class="form-group">
                         <label for="signup-password">Password</label>
-                        <input type="password" id="signup-password" name="password" placeholder="Enter your password" required>
+                        <div class="password-input-wrapper">
+                            <input type="password" id="signup-password" name="password" placeholder="Enter your password" required>
+                            <button type="button" class="password-toggle" aria-label="Toggle password visibility">
+                                <i class="eye-icon">👁️</i>
+                            </button>
+                        </div>
+                        <div id="signup-error-message" class="error-message"></div>
+                        <div id="password-requirements" class="password-requirements">
+                            Password must contain:
+                            <ul>
+                                <li id="length-check">At least 12 characters</li>
+                                <li id="uppercase-check">At least 1 uppercase letter</li>
+                                <li id="number-check">At least 1 number</li>
+                                <li id="special-check">At least 1 special character</li>
+                            </ul>
+                        </div>
                     </div>
                     <button type="submit">Sign Up</button>
                 </form>
@@ -69,11 +86,9 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </main>
 
-    <!-- FOOTER -->
     <footer id="footer"></footer>
 
     <script type="module">

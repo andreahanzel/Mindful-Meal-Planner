@@ -2234,7 +2234,7 @@ body.dark-mode .filter-container label {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 40px;
+  padding: 20px 40px 40px;
   transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -2242,7 +2242,7 @@ body.dark-mode .filter-container label {
 .form-container h1 {
   font-size: 2rem;
   color: var(--green-dark);
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   font-weight: 600;
   margin-top: 40px;
 }
@@ -2269,11 +2269,6 @@ body.dark-mode .filter-container label {
   width: 100%;
   gap: 2px;
   padding: 30px 20px;
-}
-
-/* Form Group Styles */
-.form-group {
-  width: 100%;
 }
 
 .form-group label {
@@ -2314,7 +2309,7 @@ body.dark-mode .filter-container label {
     cursor: pointer;
     transition: all 0.3s ease;
     width: 100%;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .auth-container button[type="submit"]:hover {
@@ -2550,6 +2545,104 @@ button.ghost {
   transform: none;
 }
 
+/* ============== Password Input Styling =============== */
+.password-input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.password-toggle {
+    position: absolute;
+    right: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    color: #666;
+    z-index: 5;
+}
+
+.password-toggle:hover {
+    color: var(--green-dark);
+}
+
+.error-message {
+    color: #dc3545;
+    font-size: 0.9rem;
+    margin-top: 5px;
+    min-height: 20px;
+}
+
+/* ✓ Completely revised password requirements styling */
+.password-requirements {
+  font-size: 0.65rem;
+  color: #666;
+  display: none;
+  position: relative; /* ✓ Changed to relative */
+  margin-top: -20px; /* ✓ Space below password input */
+  margin-bottom: -20px;
+  background: #f8f8f8;
+  padding: 8px 12px; 
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  width: 100%; /* ✓ Full width */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.password-requirements::before {
+    content: '';
+    position: absolute;
+    left: -10px;
+    top: 20px;
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 10px solid #ffffff;
+}
+
+.password-requirements.visible {
+    display: block;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.password-requirements ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 2px 0; 
+}
+
+.password-requirements li {
+  margin: 2px 0;
+  padding-left: 18px;
+  position: relative;
+  line-height: 1.3;
+}
+
+.password-requirements li.valid {
+  color: var(--green-dark);
+}
+
+.password-requirements li.valid::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #00913c;
+    font-weight: bold;
+}
+
+.password-requirements li.invalid {
+    color: #dc3545;
+}
+
+.password-requirements li.invalid::before {
+  content: '×';
+  position: absolute;
+  left: 0;
+  color: #dc3545;
+}
 
 /* ==== Animations ==== */
 @keyframes spin {
