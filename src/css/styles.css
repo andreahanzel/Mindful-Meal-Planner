@@ -3339,7 +3339,6 @@ button.ghost {
   }
 }
 
-
 /* Hide close button in desktop view */
 @media (min-width: 769px) {
   .close-menu {
