@@ -16,13 +16,14 @@
         <section class="recipe-search-hero">
           <h1>Recipe Search</h1>
           <div class="search-box-container">
-              <label for="recipe-search" class="sr-only">Search for recipes</label>
-              <input 
-                  type="text" 
-                  id="recipe-search" 
-                  placeholder="Search for recipes..."
-                  class="main-search-input"
-              >
+            <label for="recipe-search" id="recipe-search-label" class="sr-only">Search for recipes</label>
+            <input 
+                type="text" 
+                id="recipe-search" 
+                placeholder="Search for recipes..."
+                class="main-search-input"
+                aria-labelledby="recipe-search-label"
+            >            
               <button id="search-button" class="btn-primary search-btn">Search</button>
           </div>
       </section>
