@@ -7,3 +7,4 @@ dist
 .env
 db.json
 .env.local
+src/data/
