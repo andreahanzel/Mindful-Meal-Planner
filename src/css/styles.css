@@ -616,7 +616,7 @@ h3 {
 .recipe-search-hero {
   text-align: center;
   padding: 60px 20px;
-  background: linear-gradient(rgba(0, 122, 51, 0.1), rgba(0, 122, 51, 0.05));
+  background: linear-gradient(to bottom, rgba(149, 214, 0, 0.8), rgba(88, 185, 71, 0.8));
   border-radius: 15px;
   margin-bottom: 40px;
 }
@@ -678,7 +678,8 @@ h3 {
   margin: -1px;
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
-  border: 0;
+  white-space: nowrap;
+  border-width: 0;
 }
 
 /* Filter Section */
@@ -1532,6 +1533,7 @@ h3 {
   color: #333;
   border-radius: 16px;
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  margin-top: 60px;
 }
 
 .shopping-list-title {
@@ -2148,6 +2150,40 @@ body.dark-mode .toggle-slider::before {
 
 body.dark-mode .toggle-input:checked + .toggle-slider::before {
   transform: translateX(25px);
+}
+
+/* Dark mode styles for Recipe Search */
+body.dark-mode .recipe-search-hero h1 {
+  color: white;
+}
+
+body.dark-mode .recipe-search-hero {
+  background: linear-gradient(to bottom, rgba(88, 185, 71, 0.9), rgba(0, 122, 51, 0.9));
+}
+
+body.dark-mode .main-search-input {
+  background-color: #333333; /* Dark gray background */
+  color: #ffffff; /* White text inside the input */
+  border-color: #555555; /* Slightly lighter gray border */
+}
+
+
+body.dark-mode .search-btn {
+  background-color: #007A33; /* Dark green button */
+  color: #ffffff; /* White text on button */
+}
+
+body.dark-mode .diet-select {
+  background-color: #333333;
+  color: #ffffff;
+}
+
+body.dark-mode .sr-only {
+  display: none;
+}
+
+body.dark-mode .filter-container label {
+  color: #000000; /* Black text in dark mode */
 }
 
 /* ================== SIGN UP AND SIGN IN PAGE STYLES ================= */
