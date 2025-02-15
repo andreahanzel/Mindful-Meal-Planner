@@ -1,3 +1,4 @@
+// This file contains utility functions for loading partials and checking dark mode.
 import { initializeMenu } from './menu.js';
 import { initializeFooterNewsletter } from './footernewsletter.js';
 import { updateHeader } from './auth.js'; 
@@ -46,6 +47,7 @@ export async function loadPartials() {
 
   } catch (error) {
     console.error('Error loading partials:', error);
+    
     // Fallback content if loading fails
     document.getElementById('header').innerHTML = `
       <header class="site-header">

@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 
-/* ==== Global Styles ==== */
+/* ==== GLOBAL STYLES ==== */
 :root {
   --green-dark: #007A33;
   --green-medium: #58B947;
@@ -60,7 +60,6 @@ img, png {
   filter: contrast(1.2); /* Boosts icon visibility */
 }
 
-
 .header-grid {
   display: flex;
   justify-content: space-between;
@@ -109,7 +108,6 @@ h3 {
   padding: 0;
   margin: 0;
 }
-
 
 .nav-menu a {
   display: inline-block;
@@ -194,7 +192,6 @@ h3 {
   color: #FFA400; /* Bright orange */
   transform: scale(1.05);
 }
-
 
 .btn-primary, .btn-secondary {
   padding: 12px 20px;
@@ -310,8 +307,6 @@ h3 {
   color: #111; /* Dark text for best contrast */
 }
 
-
-
 /* Navigation buttons */
 .scroll-btn {
   position: absolute;
@@ -420,7 +415,6 @@ h3 {
 }
 
 
-
 /* ==== Footer ==== */
 .site-footer {
   background: rgba(0, 95, 47, 0.95); /* Darker green with transparency */
@@ -445,7 +439,6 @@ h3 {
   background: linear-gradient(45deg, rgba(0, 66, 37, 0.9), rgba(0, 94, 47, 0.9));
   z-index: -1;
 }
-
 
 .footer-grid {
   display: flex;
@@ -1036,7 +1029,6 @@ h3 {
   padding: 15px;
   text-align: center;
   gap: 10px; /* Ensures proper spacing between elements */
-
 }
 
 
@@ -1062,9 +1054,7 @@ h3 {
   font-size: 0.9rem;
   color: #666;
   margin-bottom: 10px;
-  
 }
-
 
 .recipe-meta span {
   background: rgba(0, 122, 51, 0.1); /* Added subtle background for visibility */
@@ -1093,7 +1083,6 @@ h3 {
 
 
 /* MEAL PLANNER STYLES */
-
 .meal-planner-container {
   max-width: 1200px;
   min-width: 100px;
@@ -2811,7 +2800,6 @@ button.ghost {
   right: 0;
 }
 
-
 /* Style the menu items */
 .nav-menu ul {
   display: flex;
@@ -2862,7 +2850,6 @@ button.ghost {
   z-index: 1200; /* Ensures it stays above the sign-up button */
   display: block !important;
   transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
-
 }
 
 /* Close Button Inside Sidebar */

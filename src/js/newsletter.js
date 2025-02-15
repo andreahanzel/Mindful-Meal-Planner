@@ -1,3 +1,4 @@
+// This script handles the newsletter subscription form.
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("newsletter-form");
   const emailInput = document.getElementById("newsletter-email");

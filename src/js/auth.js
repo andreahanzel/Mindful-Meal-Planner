@@ -12,6 +12,7 @@ const DEFAULT_USER_SETTINGS = {
   autoSave: false,
 };
 
+// This function initializes the authentication process
 export function initializeAuth() {
   console.warn("Initializing auth...");
   

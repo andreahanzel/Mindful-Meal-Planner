@@ -1,11 +1,13 @@
+// Description: This module handles the display of recipe details, including ingredients, instructions, and nutrition information. It also manages saving recipes to localStorage and fetching similar recipes from an API.
 import { getSimilarRecipes } from './api.js';
 
-// recipeDetails.js
+// This function initializes the recipe details page by displaying the recipe information and setting up event listeners.
 export function initializeRecipeDetails() {
   displayRecipeDetails();
   setupEventListeners();
 }
 
+// This function retrieves the selected recipe from localStorage and displays its details. If no recipe is found, it redirects to the recipe search page.
 function displayRecipeDetails() {
   const recipe = JSON.parse(localStorage.getItem('selectedRecipe'));
   if (!recipe) {
@@ -19,6 +21,7 @@ function displayRecipeDetails() {
   displayNutritionInfo(recipe);
   loadSimilarRecipes(recipe.label);
 }
+
 // If no recipe ID is found, show an error message
 async function loadSimilarRecipes(recipeName) {
   try {
@@ -31,6 +34,7 @@ async function loadSimilarRecipes(recipeName) {
   }
 }
 
+// Display similar recipes in a grid layout
 function displaySimilarRecipes(recipes) {
   const container = document.getElementById('similar-recipes');
   if (!recipes || !recipes.length) {
@@ -59,6 +63,7 @@ function displaySimilarRecipes(recipes) {
 
   container.innerHTML = recipesHTML;
 }
+
 // Update the recipe header with title, calories, time, and servings
 function updateRecipeHeader(recipe) {
   document.getElementById('recipe-title').textContent = recipe.label;
@@ -74,6 +79,7 @@ function updateRecipeHeader(recipe) {
   recipeImage.alt = recipe.label;
 }
 
+// Display the ingredients in a list format
 function displayIngredients(recipe) {
   const ingredientsList = document.getElementById('ingredients-list');
   ingredientsList.innerHTML = '';
@@ -84,6 +90,7 @@ function displayIngredients(recipe) {
       ingredientsList.appendChild(li);
   });
 }
+
 // Display instructions or a link to the original recipe
 function displayInstructions(recipe) {
   const instructionsList = document.getElementById('instructions-list');
@@ -108,6 +115,8 @@ function displayInstructions(recipe) {
       instructionsList.innerHTML = '<p>Instructions not available for this recipe.</p>';
   }
 }
+
+
 // Display nutrition information with a progress bar
 function displayNutritionInfo(recipe) {
   const nutritionInfo = document.getElementById('nutrition-info');
@@ -133,11 +142,13 @@ function displayNutritionInfo(recipe) {
   
   nutritionInfo.innerHTML = nutritionHTML;
 }
+
 // Set up event listeners for the save button
 function setupEventListeners() {
   const saveButton = document.getElementById('save-recipe');
   saveButton.addEventListener('click', handleSaveRecipe);
 }
+
 // Save the recipe to localStorage
 function handleSaveRecipe() {
   const recipe = JSON.parse(localStorage.getItem('selectedRecipe'));

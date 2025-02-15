@@ -10,6 +10,7 @@
     <link rel="icon" type="image/png" href="/images/favicon.png">
 </head>
 <body>
+
     <!-- HEADER -->
     <header id="header"></header>
 
@@ -21,6 +22,7 @@
             </a>
         </div>
 
+       <!-- Recipe Details Hero Section -->
         <div class="recipe-details-hero">
             <div class="recipe-hero-content">
               <h1 id="recipe-title">Recipe Title</h1>
@@ -32,6 +34,7 @@
             </div>
         </div>
 
+        <!-- Recipe Content Grid -->
         <div class="recipe-content-grid">
             <!-- Left Column -->
             <div class="recipe-main-content">
@@ -42,11 +45,13 @@
                     </button>
                 </div>
 
+                <!-- Recipe Ingredients Section -->
                 <div class="recipe-ingredients-section">
                     <h2>Ingredients</h2>
                     <ul id="ingredients-list" class="ingredients-list"></ul>
                 </div>
 
+                <!-- Recipe Instruction Section -->
                 <div class="recipe-instructions-section">
                     <h2>Instructions</h2>
                     <div id="instructions-list" class="instructions-list"></div>
@@ -62,6 +67,7 @@
             </div>
         </div>
 
+        <!-- Recipe Notes Section -->
       <section class="similar-recipes-section">
         <h2>You Might Also Like</h2>
         <div id="similar-recipes" class="similar-recipes-grid">
@@ -73,6 +79,7 @@
     <!-- FOOTER -->
     <footer id="footer"></footer>
 
+    <!-- JavaScript -->
     <script type="module">
         import { loadPartials } from '/js/utils.js';
         import { initializeRecipeDetails } from '/js/recipeDetails.js';

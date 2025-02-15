@@ -1,3 +1,4 @@
+// This file contains the JavaScript code to handle the sidebar menu toggle functionality.
 export function initializeMenu() {
   const menuToggle = document.querySelector(".menu-toggle");
   const closeMenu = document.querySelector(".close-menu");

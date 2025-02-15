@@ -61,6 +61,7 @@ export function initializeMealPlanner() {
       clearShoppingListButton.addEventListener("click", clearShoppingList);
   }
 
+  // Function to render saved recipes
   function renderSavedRecipes() {
     savedRecipesContainer.innerHTML = '';
   
@@ -99,6 +100,7 @@ export function initializeMealPlanner() {
     });
   }
 
+//  Function to remove a saved recipe
   function removeSavedRecipe(event) {
       const recipeLabel = event.target.dataset.label;
       savedRecipes = savedRecipes.filter(recipe => recipe.label !== recipeLabel);
@@ -145,6 +147,7 @@ export function initializeMealPlanner() {
         slot.addEventListener('click', handleMealSlotClick);
     });
   }
+
 // Function to open the meal selection modal
   function openMealSelection(event) {
       const recipe = JSON.parse(event.target.dataset.recipe);
@@ -178,6 +181,7 @@ export function initializeMealPlanner() {
       document.getElementById('confirm-add-meal').addEventListener('click', () => addMealToPlanner(recipe, modal));
       document.getElementById('cancel-add-meal').addEventListener('click', () => modal.remove());
   }
+
 // Function to add meal to planner
   function addMealToPlanner(recipe, modal) {
     const selectedDay = document.getElementById('day-select').value;
@@ -195,12 +199,14 @@ export function initializeMealPlanner() {
     modal.remove();
     renderMealPlan();
   }
+
 // Function to clear the meal plan
   function clearMealPlan() {
       localStorage.removeItem('mealPlan');
       mealPlan = {};
       renderMealPlan();
   }
+
 // Function to handle meal slot click
   function handleMealSlotClick(event) {
     const slotElement = event.target.closest('.meal-slot');
@@ -246,6 +252,7 @@ export function initializeMealPlanner() {
 
     modal.querySelector('#cancel').addEventListener('click', () => modal.remove());
   }
+  
 // Function to open meal selection for changing an existing meal
   function openMealSelectionForChange(day, mealType) {
     const modal = document.createElement('div');

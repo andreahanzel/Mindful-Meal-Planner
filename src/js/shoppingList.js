@@ -1,3 +1,4 @@
+// This file contains the logic for the shopping list functionality
 export function initializeShoppingList() {
   const shoppingListContainer = document.getElementById('shopping-list');
   const clearShoppingListButton = document.getElementById('clear-shopping-list');
@@ -58,12 +59,14 @@ export function initializeShoppingList() {
       shoppingListContainer.appendChild(li);
     });
   }
+
 // Function to clear the shopping list
   function clearShoppingList() {
     localStorage.removeItem('shoppingList');
     shoppingList = {};
     renderShoppingList();
   }
+
 // Function to create and download the PDF
   function createAndDownloadPDF() {
     const { jsPDF } = window.jspdf;
@@ -111,11 +114,13 @@ export function initializeShoppingList() {
 
     return doc;
 }
+
 // Function to download the PDF
   function downloadPDF() {
     const doc = createAndDownloadPDF();
     doc.save('shopping-list.pdf');
   }
+  
 // Function to email the shopping list
   function emailShoppingList() {
     let emailContent = 'Shopping List:\n\n';

@@ -1,6 +1,6 @@
-const EDAMAM_APP_ID = import.meta.env.VITE_EDAMAM_APP_ID;
-const EDAMAM_API_KEY = import.meta.env.VITE_EDAMAM_API_KEY;
-const SPOONACULAR_API_KEY = import.meta.env.VITE_SPOONACULAR_API_KEY;
+const EDAMAM_APP_ID = import.meta.env.VITE_EDAMAM_APP_ID; // Edamam App ID
+const EDAMAM_API_KEY = import.meta.env.VITE_EDAMAM_API_KEY; // Edamam API Key
+const SPOONACULAR_API_KEY = import.meta.env.VITE_SPOONACULAR_API_KEY; // Spoonacular API Key
 
 console.warn('Environment Variables:', {
     EDAMAM_APP_ID,
@@ -9,6 +9,7 @@ console.warn('Environment Variables:', {
 
 console.warn("Spoonacular API Key:", import.meta.env.VITE_SPOONACULAR_API_KEY);
 
+// Function to fetch recipes from Edamam API
 export async function searchRecipes(query, diet = '') {
     try {
         console.warn('API Credentials:', {
@@ -50,6 +51,7 @@ export async function searchRecipes(query, diet = '') {
     }
 }
 
+// Recipe Search
 export function initializeRecipeSearch() {
     const searchInput = document.getElementById('recipe-search');
     const searchButton = document.getElementById('search-button');
@@ -90,6 +92,7 @@ export function initializeRecipeSearch() {
         }
     }
 
+    // Function to display recipes
     function displayRecipes(recipes) {
         if (!recipes || !recipes.length) {
             resultsContainer.innerHTML = '<p>No recipes found. Try different keywords.</p>';

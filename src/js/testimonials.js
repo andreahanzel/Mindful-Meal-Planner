@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
       container.style.transform = `translateX(${offset}%)`;
   }
 
-  // Initialize the testimonials position
+  // Initialize the testimonials position on page load
   function scrollTestimonials(direction) {
       if (direction === 1 && index < testimonials.length - 1) {
           index++;

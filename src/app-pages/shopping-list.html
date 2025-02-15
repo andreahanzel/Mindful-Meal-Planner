@@ -10,15 +10,14 @@
     <link rel="icon" type="image/png" href="/images/favicon.png">
 </head>
 <body>
+
     <!-- HEADER -->
     <header id="header"></header>
-
+    <!-- SHOPPING LIST CONTAINER -->
     <main class="shopping-list-container">
       <h1>Shopping List</h1>
       <p>Here are the ingredients you'll need to prepare your selected meals.</p>
-  
       <ul id="shopping-list"></ul>
-  
       <div class="shopping-list-actions">
         <button id="clear-shopping-list" class="btn-mealplanner">Clear Shopping List</button>
         <button id="email-shopping-list" class="btn-mealplanner">Email List</button>
@@ -30,6 +29,8 @@
     <!-- FOOTER -->
     <footer id="footer"></footer>
 
+
+    <!-- JAVASCRIPT -->
     <script type="module">
         import { loadPartials } from '/js/utils.js';
         import { initializeShoppingList } from '/js/shoppingList.js';

@@ -1,3 +1,4 @@
+// Settings page JavaScript
 import { loadPartials } from '/js/utils.js';
 import { checkAuthState } from '/js/auth.js';
 
@@ -27,6 +28,7 @@ function initializeWelcomeMessage() {
     welcomeMessage.textContent = `Welcome, ${user.name || 'User'}!`;
   }
 }
+
 // Initialize the contact form
 function initializeContactForm() {
   if (!checkAuthState()) {
@@ -59,6 +61,7 @@ function initializeContactForm() {
     });
   }
 }
+
 // Initialize the settings toggle
 export function initializeSettingsToggle() {
   if (!checkAuthState()) {
@@ -195,6 +198,7 @@ case 'notifications':
       console.warn(`Unknown setting: ${settingId}`);
   }
 }
+
 // Function to start auto-saving
 function startAutoSave() {
   const interval = localStorage.getItem('auto-save-interval');
@@ -208,6 +212,7 @@ function startAutoSave() {
     }, parseInt(interval));
   }
 }
+
 // Function to stop auto-saving
 function stopAutoSave() {
   if (window.autoSaveInterval) {
@@ -216,6 +221,7 @@ function stopAutoSave() {
     console.warn('Auto-save disabled');
   }
 }
+
 // Function to collect recipe data (placeholder)
 function collectRecipeData() {
   console.warn('collectRecipeData() needs to be implemented!');
@@ -224,6 +230,7 @@ function collectRecipeData() {
     ingredients: ['Ingredient 1', 'Ingredient 2']
   };
 }
+
 // Function to show feedback message
 function showFeedbackMessage(settingId, isEnabled) {
   const toggle = document.getElementById(settingId);
