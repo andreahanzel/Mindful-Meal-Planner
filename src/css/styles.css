@@ -2132,12 +2132,35 @@ body.dark-mode .preference-label,
 body.dark-mode .saved-meals-grid p,
 body.dark-mode .faq-item p,
 body.dark-mode .contact-section label,
-body.dark-mode .contact-section input,
 body.dark-mode .breadcrumb .back-link:hover,
 body.dark-mode .breadcrumb .back-link .arrow,
-body.dark-mode .breadcrumb .back-link,
-body.dark-mode .contact-section textarea {
+body.dark-mode .breadcrumb .back-link {
   color: #ffffff !important;
+}
+
+body.dark-mode .contact-section input,
+body.dark-mode .contact-section textarea {
+    background-color: #333 !important;
+    border-color: #3d3d3d !important;
+    color: #fff !important;
+}
+
+/* Hover and focus states */
+body.dark-mode .contact-section input:focus,
+body.dark-mode .contact-section textarea:focus {
+    border-color: var(--green-medium) !important;
+    background-color: #404040 !important;
+    box-shadow: 0 0 0 3px rgba(88, 185, 71, 0.2) !important;
+}
+
+/* Style the contact section background in dark mode */
+body.dark-mode .contact-section {
+    background: #2d2d2d !important;
+}
+
+body.dark-mode .contact-section input::placeholder,
+body.dark-mode .contact-section textarea::placeholder {
+    color: rgba(255, 255, 255, 0.6) !important;
 }
 
 /* Global dark mode styles for containers */
@@ -2232,6 +2255,40 @@ body.dark-mode .sr-only {
 
 body.dark-mode .filter-container label {
   color: #000000; /* Black text in dark mode */
+}
+
+body.dark-mode .faq-item {
+  background: #2d2d2d;
+  border-color: #3d3d3d;
+}
+
+body.dark-mode .faq-header {
+  background: #333;
+}
+
+body.dark-mode .faq-header h3 {
+  color: #fff;
+}
+
+body.dark-mode .faq-item {
+  background: #2d2d2d;
+  border-color: #3d3d3d;
+}
+
+body.dark-mode .faq-header {
+  background: #333;
+}
+
+body.dark-mode .faq-header h3 {
+  color: #fff;
+}
+
+body.dark-mode .faq-arrow {
+  color: #fff 
+}
+
+body.dark-mode .faq-item:hover .faq-arrow {
+  color: var(--green-light); 
 }
 
 /* ================== SIGN UP AND SIGN IN PAGE STYLES ================= */
