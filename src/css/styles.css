@@ -1243,6 +1243,7 @@ h3 {
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
   z-index: 1000;
+  padding: 20px;
 }
 
 .meal-selection-modal .modal-content {
@@ -1254,6 +1255,27 @@ h3 {
   position: relative;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   animation: fadeIn 0.3s ease-in-out;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+/* Webkit scrollbar styles (Chrome, Safari, newer Edge) */
+.meal-selection-modal .modal-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.meal-selection-modal .modal-content::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.meal-selection-modal .modal-content::-webkit-scrollbar-thumb {
+  background: var(--green-medium);
+  border-radius: 10px;
+}
+
+.meal-selection-modal .modal-content::-webkit-scrollbar-thumb:hover {
+  background: var(--green-dark);
 }
 
 /* Modal Header */
@@ -1309,13 +1331,31 @@ h3 {
 
 /* Recipe Selection List */
 #saved-recipes-list {
-  max-height: 300px;
+  max-height: 50vh;
   overflow-y: auto;
   margin-bottom: 20px;
   padding: 10px;
   background-color: #f9f9f9;
   border-radius: 8px;
   border: 1px solid #eee;
+}
+
+#saved-recipes-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+#saved-recipes-list::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+#saved-recipes-list::-webkit-scrollbar-thumb {
+  background: #58B947;
+  border-radius: 10px;
+}
+
+#saved-recipes-list::-webkit-scrollbar-thumb:hover {
+  background: #007A33;
 }
 
 .saved-recipe-item {
@@ -1328,6 +1368,7 @@ h3 {
   border: 1px solid #eee;
   transition: all 0.3s ease;
   cursor: pointer;
+  flex-wrap: wrap;
 }
 
 .saved-recipe-item:hover {
@@ -3557,12 +3598,28 @@ button.ghost {
 
   .meal-selection-modal .modal-content {
     width: 95%;
-    padding: 20px;
+    padding: 15px;
   }
 
   .meal-selection-modal button {
     width: 100%;
     margin: 5px 0;
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+
+  .saved-recipe-item img {
+    width: 40px; /* Smaller images on mobile */
+    height: 40px;
+  }
+
+  .saved-recipe-item span {
+    font-size: 0.9rem; /* Smaller text on mobile */
+  }
+
+  .meal-selection-modal select {
+    padding: 8px;
+    font-size: 0.9rem;
   }
 
   /* Sign Up and Sign In page */
