@@ -1447,10 +1447,36 @@ h3 {
   transition: transform 0.3s ease;
   margin-bottom: 30px;
   margin-top: 40px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .saved-meal-card:hover {
   transform: scale(1.02);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.recipe-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.btn-view-recipe {
+  background: blue;
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: background 0.3s ease;
+  display: inline-block;
+}
+
+.btn-view-recipe:hover {
+  background: var(--orange-dark);
 }
 
 /* Recipe Image */
@@ -1996,17 +2022,53 @@ h3 {
 }
 
 .faq-item {
-  margin-bottom: 20px;
-  padding: 20px;
+  border: 1px solid #eee;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  overflow: hidden;
   background: white;
-  border-radius: 12px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  transition: all 0.2s ease;
+  transition: all 0.3s ease;
 }
 
 .faq-item:hover {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   transform: translateY(-1px);
+}
+
+.faq-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  cursor: pointer;
+  background: #f8f8f8;
+}
+
+.faq-header h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: var(--green-dark);
+}
+
+.faq-arrow {
+  transition: transform 0.3s ease;
+  color: var(--green-dark);
+}
+
+.faq-content {
+  padding: 0 20px;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.faq-item.active .faq-arrow {
+  transform: rotate(180deg);
+}
+
+.faq-item.active .faq-content {
+  padding: 15px 20px;
+  max-height: 500px; /* Increased from 200px to accommodate longer content */
 }
 
 .faq-item h3 {
@@ -2765,9 +2827,9 @@ button.ghost {
   right: -100%; /* Start completely off-screen */
   width: 250px;
   height: 100vh; /* Full screen height */
-  background: rgba(0, 128, 0, 0.85); /* More opacity */
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px); /* Glass effect */
+  background: rgba(0, 128, 0, 0.95);/* More opacity */
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(15px); /* Glass effect */
   padding-top: 60px;
   box-shadow: -5px 0 10px rgba(0, 0, 0, 0.2);
   transition: right 0.4s ease-in-out;
@@ -3113,6 +3175,7 @@ button.ghost {
   color: #666;
   font-style: italic;
 }
+
 
  /* ======== Shopping List  Section ========= */
 .shopping-list-container {

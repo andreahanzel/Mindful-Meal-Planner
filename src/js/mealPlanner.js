@@ -64,29 +64,31 @@ export function initializeMealPlanner() {
   // Function to render saved recipes
   function renderSavedRecipes() {
     savedRecipesContainer.innerHTML = '';
-  
+
     if (savedRecipes.length === 0) {
-      savedRecipesContainer.innerHTML = `
-        <p>No saved recipes yet. Save some recipes first!</p>
-      `;
-      // Clear the meal plan when no recipes are saved
-      clearMealPlan();
-      return;
+        savedRecipesContainer.innerHTML = `
+            <p>No saved recipes yet. Save some recipes first!</p>
+        `;
+        // Clear the meal plan when no recipes are saved
+        clearMealPlan();
+        return;
     }
 
     savedRecipes.forEach(recipe => {
         const recipeCard = document.createElement('div');
         recipeCard.classList.add('saved-meal-card');
+
         recipeCard.innerHTML = `
-          <img src="${recipe.image}" alt="${recipe.label}">
-          <div class="saved-meal-info">
-              <h3>${recipe.label}</h3>
-              <p>${Math.round(recipe.calories)} calories</p>
-              <div class="saved-meal-actions">
-                  <button class="btn-add-meal" data-recipe='${JSON.stringify(recipe).replace(/'/g, "&#39;").replace(/"/g, "&quot;")}'>Add to Planner</button>
-                  <button class="btn-remove-meal" data-label="${recipe.label}">Remove</button>
-              </div>
-          </div>
+            <img src="${recipe.image}" alt="${recipe.label}">
+            <div class="saved-meal-info">
+                <h3>${recipe.label}</h3>
+                <p>${Math.round(recipe.calories)} calories</p>
+                <div class="saved-meal-actions">
+                    <button class="btn-add-meal" data-recipe='${JSON.stringify(recipe).replace(/'/g, "&#39;").replace(/"/g, "&quot;")}'>Add to Planner</button>
+                    <button class="btn-remove-meal" data-label="${recipe.label}">Remove</button>
+                    <a href="${recipe.url}" target="_blank" rel="noopener noreferrer" class="btn-view-recipe">View Original Recipe</a>
+                </div>
+            </div>
         `;
         savedRecipesContainer.appendChild(recipeCard);
     });
@@ -98,7 +100,7 @@ export function initializeMealPlanner() {
     document.querySelectorAll('.btn-remove-meal').forEach(button => {
         button.addEventListener('click', removeSavedRecipe);
     });
-  }
+}
 
 //  Function to remove a saved recipe
   function removeSavedRecipe(event) {
